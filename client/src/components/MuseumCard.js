@@ -5,7 +5,7 @@ import Login from "./Login"
 function MuseumCard() {
   return (
     <>
-      <TourForm />
+    <TourForm />
       <Login />
     </>
   )
