@@ -2,10 +2,11 @@ import React from "react"
 import TourForm from "./TourForm"
 import Login from "./Login"
 
-function MuseumCard() {
+function MuseumCard({ id, name, category, address, link, image }) {
   return (
     <>
-    <TourForm />
+      <img src={image} alt={name} />
+      <TourForm />
       <Login />
     </>
   )
