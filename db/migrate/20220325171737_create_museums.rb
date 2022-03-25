@@ -3,7 +3,7 @@ class CreateMuseums < ActiveRecord::Migration[7.0]
     create_table :museums do |t|
       t.string :name
       t.string :address
-      t.text :category, array: true, default: []
+      t.text :category, array: true
       t.timestamps
     end
   end

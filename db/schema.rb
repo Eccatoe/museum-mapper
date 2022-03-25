@@ -10,23 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_25_172613) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "museum_tours", force: :cascade do |t|
-    t.bigint "museum_id", null: false
-    t.bigint "tour_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["museum_id"], name: "index_museum_tours_on_museum_id"
-    t.index ["tour_id"], name: "index_museum_tours_on_tour_id"
-  end
-
+ActiveRecord::Schema[7.0].define(version: 2022_03_25_205437) do
   create_table "museums", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.string "category"
+    t.text "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "link"
@@ -35,15 +23,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_172613) do
 
   create_table "tours", force: :cascade do |t|
     t.string "name"
-    t.string "day"
-    t.string "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "museum_id"
   end
 
   create_table "user_tours", force: :cascade do |t|
-    t.bigint "tour_id", null: false
-    t.bigint "user_id", null: false
+    t.string "time"
+    t.string "day"
+    t.integer "tour_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["tour_id"], name: "index_user_tours_on_tour_id"
@@ -59,8 +48,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_172613) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "museum_tours", "museums"
-  add_foreign_key "museum_tours", "tours"
   add_foreign_key "user_tours", "tours"
   add_foreign_key "user_tours", "users"
 end

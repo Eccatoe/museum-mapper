@@ -2,7 +2,7 @@ import React from "react"
 import { Route, Routes } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import Home from "./components/Home"
-import UserProfile from'./components/UserProfile'
+import UserProfile from "./components/UserProfile"
 import TourForm from "./components/TourForm"
 
 function App() {
