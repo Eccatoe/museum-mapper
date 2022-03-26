@@ -1,3 +1,11 @@
+
 img{
     max-width: 30vw
 }
+
+.mapboxgl-canvas-container {
+    width: 20vw;
+    height: 100%;
+
+}
+

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactMapGL from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 function Map() {
   let [viewport, setViewport] = useState({
@@ -11,7 +12,7 @@ function Map() {
   return(<>
       <ReactMapGL
       {...viewport}
-      width="20%"
+      width="100%"
       height="100vh"
       onViewportChange={(newViewport) => setViewport(newViewport)}
       mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
