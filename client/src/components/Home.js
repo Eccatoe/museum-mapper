@@ -6,7 +6,7 @@ function Home() {
   useEffect(() => {
     fetch("/museums")
       .then((r) => r.json())
-      .then(setMuseums)
+      .then((data)=>setMuseums(data))
   }, [])
   return (
     <>

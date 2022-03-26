@@ -1,4 +1,3 @@
-import React from "react"
 import Swipe from "./Swipe"
 
 function TourForm() {
