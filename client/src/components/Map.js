@@ -1,23 +1,26 @@
-import { useState } from "react";
-import ReactMapGL from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css'
+import { useState } from "react"
+import ReactMapGL from "react-map-gl"
+import "mapbox-gl/dist/mapbox-gl.css"
+import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
 
 function Map() {
   let [viewport, setViewport] = useState({
     latitude: 38.892,
     longitude: -76.991,
-    zoom: 11.16
-  });
+    minZoom: 10.5,
+  })
 
-  return(<>
+  return (
+    <>
       <ReactMapGL
-      {...viewport}
-      width="100%"
-      height="100vh"
-      onViewportChange={(newViewport) => setViewport(newViewport)}
-      mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
-    />
-    </>)
+        {...viewport}
+        width="100%"
+        height="100vh"
+        onViewportChange={(newViewport) => setViewport(newViewport)}
+        mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
+      />
+    </>
+  )
 }
 
-export default Map;
+export default Map
