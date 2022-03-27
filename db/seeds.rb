@@ -75,7 +75,7 @@ Museum.create(
 )
 Museum.create(
     name: "National Portrait Gallery", 
-    address: "8th St & F St NW", 
+    address: "800 F St NW", 
     category: "Portraiture Art", 
     link: "https://npg.si.edu/", 
     image: "http://media.afar.com/uploads/images/post_images/images/k9hlvGyY4V/original__NPG6805_R.jpg"
@@ -96,7 +96,7 @@ Museum.create(
 )
 Museum.create(
     name: "Smithsonian American Art Museum", 
-    address: "G St & 8th St NW", 
+    address: "800 G St NW", 
     category: "Art Culture", 
     link: "https://americanart.si.edu/", 
     image: "https://unsplash.com/photos/xXJ5xPcknRA"
@@ -123,7 +123,7 @@ Museum.create(
     image: "https://images.unsplash.com/photo-1559421240-c3356cab72ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 )
 Museum.create(
-    name: "National Holocaust Museum", 
+    name: "United States Holocaust Memorial Museum", 
     address: "100 Raoul Wallenberg Pl SW", 
     category: "History", 
     link: "https://www.ushmm.org/", 
