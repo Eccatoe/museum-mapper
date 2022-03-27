@@ -12,13 +12,15 @@ function Map() {
 
   return (
     <>
-      <ReactMapGL
-        {...viewport}
-        width="100%"
-        height="100vh"
-        onViewportChange={(newViewport) => setViewport(newViewport)}
-        mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
-      />
+      <div>
+        <ReactMapGL
+          {...viewport}
+          width="100%"
+          height="100vh"
+          onViewportChange={(newViewport) => setViewport(newViewport)}
+          mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
+        />
+      </div>
     </>
   )
 }
