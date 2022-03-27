@@ -18,6 +18,7 @@ function Map() {
           width="100%"
           height="100vh"
           onViewportChange={(newViewport) => setViewport(newViewport)}
+          mapStyle="mapbox://styles/eccatoe2517/cl15qreja000515o1mzsnxhyr"
           mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
         />
       </div>
