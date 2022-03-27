@@ -85,7 +85,6 @@ function MuseumContainer({ museums }) {
                       </CardContent>
                     </Collapse>
                     <Link href="/login" />
-                    Login
                     {/* <TourForm />
                     <Login /> */}
                   </Card>

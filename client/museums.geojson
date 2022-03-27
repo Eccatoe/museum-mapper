@@ -1,104 +1,226 @@
 {
   "features": [
     {
+      "geometry": {
+        "coordinates": [
+          -77.0229615932543,
+          38.88822357963494
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Lincoln Park",
-        "description": "A northside park that is home to the Lincoln Park Zoo"
-      },
-      "geometry": {
-        "coordinates": [-87.637596, 41.940403],
-        "type": "Point"
+        "name": "Hirshhorn Museum and Sculpture Garden"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -76.97682976256489,
+          38.856575890110435
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Burnham Park",
-        "description": "A lakefront park on Chicago's south side"
-      },
-      "geometry": {
-        "coordinates": [-87.603735, 41.829985],
-        "type": "Point"
+        "name": "Anacostia Community Museum"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.01975788954995,
+          38.88812765492665
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Millennium Park",
-        "description": "A downtown park known for its art installations and unique architecture"
-      },
-      "geometry": {
-        "coordinates": [-87.622554, 41.882534],
-        "type": "Point"
+        "name": "National Air and Space Museum"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.03270727976185,
+          38.891103421909094
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Grant Park",
-        "description": "A downtown park that is the site of many of Chicago's favorite festivals and events"
-      },
-      "geometry": {
-        "coordinates": [-87.619185, 41.876367],
-        "type": "Point"
+        "name": "National Museum of African American History and Culture"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.02549143187714,
+          38.88798852658266
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Humboldt Park",
-        "description": "A large park on Chicago's northwest side"
-      },
-      "geometry": {
-        "coordinates": [-87.70199, 41.905423],
-        "type": "Point"
+        "name": "National Museum of African Art"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.03001390674564,
+          38.89125057803281
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Douglas Park",
-        "description": "A large park near in Chicago's North Lawndale neighborhood"
-      },
-      "geometry": {
-        "coordinates": [-87.699329, 41.860092],
-        "type": "Point"
+        "name": "National Museum of American History"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.0264339067458,
+          38.88797252658691
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Calumet Park",
-        "description": "A park on the Illinois-Indiana border featuring a historic fieldhouse"
-      },
-      "geometry": {
-        "coordinates": [-87.530221, 41.715515],
-        "type": "Point"
+        "name": "National Museum of Asian Art"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.01674721230407,
+          38.88822467551401
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Jackson Park",
-        "description": "A lakeside park that was the site of the 1893 World's Fair"
-      },
-      "geometry": {
-        "coordinates": [-87.580389, 41.783185],
-        "type": "Point"
+        "name": "National Museum of the American Indian"
       }
     },
     {
+      "geometry": {
+        "coordinates": [
+          -77.02602146627063,
+          38.89126452600581
+        ],
+        "type": "Point"
+      },
       "type": "Feature",
       "properties": {
-        "title": "Columbus Park",
-        "description": "A large park in Chicago's Austin neighborhood"
-      },
-      "geometry": {
-        "coordinates": [-87.769775, 41.873683],
-        "type": "Point"
+        "name": "National Museum of Natural History"
       }
-    }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.02297536441844,
+          38.897859673949995
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "National Portrait Gallery"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.00820430489323,
+          38.89823841920369
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "National Postal Museum"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.03909805886173,
+          38.89913576858115
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Renwick Gallery"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.02298970304095,
+          38.89820036872797
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Smithsonian American Art Museum"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.02599163558186,
+          38.88879582452
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "Smithsonian Institution Building"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.04966844641824,
+          38.92913405575851
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "National Zoological Park (National Zoo)"
+      }
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -77.0229286183864,
+          38.89284098921843
+        ],
+        "type": "Point"
+      },
+      "type": "Feature",
+      "properties": {
+        "name": "National Archives"
+      }
+    },
+    {
+  "geometry": {
+    "coordinates": [
+      -77.03272303372984,
+      38.88665184202878
+    ],
+    "type": "Point"
+  },
+  "type": "Feature",
+  "properties": {
+    "name": "United States Holocaust Memorial Museum"
+  }
+}
   ],
   "type": "FeatureCollection"
 }
