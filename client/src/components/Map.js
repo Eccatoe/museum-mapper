@@ -6,8 +6,8 @@ import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css"
 function Map() {
   let [viewport, setViewport] = useState({
     latitude: 38.892,
-    longitude: -76.991,
-    minZoom: 10.5,
+    longitude: -77.014,
+    minZoom: 11,
   })
 
   return (
