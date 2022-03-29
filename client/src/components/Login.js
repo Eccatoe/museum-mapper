@@ -24,15 +24,13 @@ function Login({ currentUser, setCurrentUser }) {
       body: JSON.stringify({
         username,
         password,
-      })
-      .then((res) => {
+      }).then((res) => {
         if (res.ok) {
           res.json().then((currentUser) => setCurrentUser(currentUser))
         } else alert(alertMessage)
       }),
     })
   }
-  console.log(currentUser)
 
   return (
     <>
