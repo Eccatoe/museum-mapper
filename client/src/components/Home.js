@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react"
 import MuseumContainer from "./MuseumContainer"
+import AppAdapter from '../adapters/AppAdapter'
 
-function Home({currentUser}) {
+function Home() {
   const [museums, setMuseums] = useState([])
 
-
-
-
   useEffect(() => {
-    fetch("/museums")
-      .then((r) => r.json())
+    AppAdapter.getMuseums()
       .then((data)=>setMuseums(data))
   }, [])
 
-  console.log(currentUser)
   return (
     <>
       <MuseumContainer museums={museums} />

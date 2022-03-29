@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
 import AlertTitle from "@mui/material/AlertTitle"
+import AppAdapter from '../adapters/AppAdapter'
 
 function Login({ currentUser, setCurrentUser }) {
   const [username, setUsername] = useState("")
@@ -36,14 +37,8 @@ function Login({ currentUser, setCurrentUser }) {
   }
 
   function handleLogOut(){
-    fetch('/logout', {
-      method: 'DELETE'
-    })
-    console.log(currentUser)
+    AppAdapter.logout()
   }
-
-  console.log(currentUser)
-
 
   return (
     <>

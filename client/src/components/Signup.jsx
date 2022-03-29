@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {useNavigate } from "react-router-dom"
+import AppAdapter from '../adapters/AppAdapter'
 
 
 
@@ -20,21 +21,16 @@ function Signup({currentUser, setCurrentUser}) {
 
     function handleSignup(e){
         e.preventDefault()
-        fetch("/signup", {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-          })
+        AppAdapter.signup(formData)
           .then(res=>{
               if (res.ok){
-                res.json()
+                res.json().then((currentUser) => setCurrentUser(currentUser))
                 navigate('/login')
               }
           })
     }
-console.log(currentUser)
+    console.log(currentUser)
+
 
   return (
     <>

@@ -6,14 +6,14 @@ import UserProfile from "./components/UserProfile"
 import TourForm from "./components/TourForm"
 import Login from "./components/Login"
 import Signup from './components/Signup'
+import AppAdapter from './adapters/AppAdapter'
 import "./App.css"
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
 
   useEffect(() => {
-    fetch("/me")
-      .then((r) => r.json())
+    AppAdapter.auth()
       .then((currentUser) => setCurrentUser(currentUser))
   }, [])
 
