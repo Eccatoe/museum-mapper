@@ -1,3 +1,8 @@
+body {
+  /* background-color: #081317; */
+  overflow: hidden;
+}
+
 img {
   max-width: 30vw;
 }

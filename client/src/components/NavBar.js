@@ -35,8 +35,11 @@ function NavBar() {
     setAnchorElUser(null)
   }
   return (
-    <>
-      <AppBar position="static">
+    <div>
+      <AppBar
+        style={{ backgroundColor: "#21364e", marginBottom: "20px" }}
+        position="static"
+      >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -153,7 +156,7 @@ function NavBar() {
       {/* <Link to={{pathname: `/profile/${id}`}}>Profile</Link> */}
       {/* <Link to="/login">Login/Signup</Link>
       <Link to="/tour_form">Book a Tour</Link> */}
-    </>
+    </div>
   )
 }
 
