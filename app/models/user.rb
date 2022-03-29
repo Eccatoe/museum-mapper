@@ -3,11 +3,11 @@ class User < ApplicationRecord
     has_many :user_tours
     has_many :tours, through: :user_tours
 
-    validates :username, uniqueness: :true
-    validates :password, length: {minimum: 5}
-    #---- custom validations 
-    validate :password_contains_number
-    validate :password_special_char
+    # validates :username, uniqueness: :true
+    # validates :password, length: {minimum: 5}
+    # #---- custom validations 
+    # validate :password_contains_number
+    # validate :password_special_char
 
 
     def password_special_char

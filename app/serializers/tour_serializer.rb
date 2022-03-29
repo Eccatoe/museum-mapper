@@ -1,3 +1,5 @@
 class TourSerializer < ActiveModel::Serializer
-  attributes :id, :name, :day, :time
+  attributes :id, :name
+
+  # has_many :users
 end

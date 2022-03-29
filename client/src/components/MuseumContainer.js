@@ -14,7 +14,7 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 
 function MuseumContainer({ museums }) {
-
+console.log(museums)
   const createMuseumCard = museums.map((item, index) => (
     <Card key={index} sx={{ maxWidth: 345 }} >
       <CardMedia

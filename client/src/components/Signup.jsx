@@ -29,7 +29,6 @@ function Signup({currentUser, setCurrentUser}) {
               }
           })
     }
-    console.log(currentUser)
 
 
   return (

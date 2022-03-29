@@ -8,7 +8,7 @@ const AppAdapter ={
         },
         body: JSON.stringify(example),
       }),
-    logout: ()=>fetch('/logout', {method: 'DELETE'})
+    logout: ()=>fetch('/logout', {method: 'DELETE'}),
 }
 
 export default AppAdapter

@@ -1,40 +1,55 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import Toolbar from "@mui/material/Toolbar"
-import IconButton from "@mui/material/IconButton"
-import Typography from "@mui/material/Typography"
-import Menu from "@mui/material/Menu"
-import MenuIcon from "@mui/icons-material/Menu"
-import Container from "@mui/material/Container"
-import Avatar from "@mui/material/Avatar"
-import Button from "@mui/material/Button"
-import Tooltip from "@mui/material/Tooltip"
-import MenuItem from "@mui/material/MenuItem"
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import AppAdapter from "../adapters/AppAdapter";
 
-const pages = ["login", "signup", "booktour"]
-const settings = ["Profile", "Account", "Dashboard", "Logout"]
+const pages = ["login", "signup", "booktour"];
+const settings = ["Profile", "Logout"];
 
-function NavBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null)
-  const [anchorElUser, setAnchorElUser] = React.useState(null)
+function NavBar({currentUser}) {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  let navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget)
-  }
+    setAnchorElNav(event.currentTarget);
+  };
   const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget)
-  }
+    setAnchorElUser(event.currentTarget);
+  };
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null)
-  }
+    setAnchorElNav(null);
+  };
 
   const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
+    setAnchorElUser(null);
+  };
+
+  function handleSelect(e) {
+    const path = e.target.textContent.toLowerCase();
+    console.log(path==="profile")
+    if (path === "profile" && currentUser) {
+      navigate('/profile');
+    } else if (!currentUser){
+      navigate('/login')
+    } else if (path==="logout"){
+      AppAdapter.logout()
+      navigate('/home')
+    } 
   }
+  
   return (
     <div>
       <AppBar
@@ -123,7 +138,10 @@ function NavBar() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <AccountCircleIcon  fontSize="large" style={{color:"white"}}/>
+                  <AccountCircleIcon
+                    fontSize="large"
+                    style={{ color: "white" }}
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -144,7 +162,9 @@ function NavBar() {
               >
                 {settings.map((setting) => (
                   <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
+                    <Typography onClick={handleSelect} textAlign="center">
+                      {setting}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -158,7 +178,7 @@ function NavBar() {
       {/* <Link to="/login">Login/Signup</Link>
       <Link to="/tour_form">Book a Tour</Link> */}
     </div>
-  )
+  );
 }
 
-export default NavBar
+export default NavBar;

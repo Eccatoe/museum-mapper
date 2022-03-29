@@ -1,8 +1,12 @@
+import Tour from './Tour'
+function UserProfile({ currentUser }) {
 
-function UserProfile() {
   return (
-    <div>UserProfile</div>
-  )
+    <>
+      <h1>Welcome, {currentUser.id}</h1>
+      { (currentUser&&currentUser.tours) ? <Tour tours={currentUser.tours}/> : <p>You have no tours</p> }
+    </>
+  );
 }
 
-export default UserProfile
+export default UserProfile;

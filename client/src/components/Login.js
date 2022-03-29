@@ -36,6 +36,8 @@ function Login({ currentUser, setCurrentUser }) {
     })
   }
 
+  console.log(currentUser)
+
   function handleLogOut(){
     AppAdapter.logout()
   }
@@ -65,7 +67,6 @@ function Login({ currentUser, setCurrentUser }) {
       </form>
       <button onClick={handleLogOut}>Log Out</button>
 
-      {/* <Auth /> */}
 
       <h1>Don't have an account?</h1>
       <Button>Sign Up</Button>

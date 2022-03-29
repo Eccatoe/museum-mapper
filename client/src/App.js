@@ -13,16 +13,16 @@ function App() {
   const [currentUser, setCurrentUser] = useState({})
 
   useEffect(() => {
-    AppAdapter.auth()
+    fetch('/me').then(res => res.json())
       .then((currentUser) => setCurrentUser(currentUser))
   }, [])
 
   return (
     <div>
-      <NavBar />
+      <NavBar currentUser={currentUser}/>
       <Routes>
         <Route exact path="/home" element={<Home currentUser={currentUser}/>} />
-        <Route exact path="/profile/:id" element={<UserProfile />} />
+        <Route exact path="/profile" element={<UserProfile currentUser={currentUser} />} />
         <Route exact path="/tour_form" element={<TourForm />} />
         <Route
           exact
