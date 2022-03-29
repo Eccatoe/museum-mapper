@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import UserProfile from "./components/UserProfile"
 import TourForm from "./components/TourForm"
 import Login from "./components/Login"
+import Signup from './components/Signup'
 import "./App.css"
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/home" element={<Home currentUser={currentUser}/>} />
         <Route exact path="/profile/:id" element={<UserProfile />} />
         <Route exact path="/tour_form" element={<TourForm />} />
         <Route
@@ -28,6 +29,13 @@ function App() {
           path="/login"
           element={
             <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          }
+        />
+        <Route
+          exact
+          path="/signup"
+          element={
+            <Signup currentUser={currentUser} setCurrentUser={setCurrentUser} />
           }
         />
       </Routes>

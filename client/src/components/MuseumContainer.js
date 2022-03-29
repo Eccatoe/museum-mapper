@@ -14,10 +14,6 @@ import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 
 function MuseumContainer({ museums }) {
-  const m = museums.map((m) => m.name)
-  // function handleMouseOver() {
-  //   console.log(m)
-  // }
 
   const createMuseumCard = museums.map((item, index) => (
     <Card key={index} sx={{ maxWidth: 345 }} >

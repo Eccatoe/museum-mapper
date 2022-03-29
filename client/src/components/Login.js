@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom"
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
 import AlertTitle from "@mui/material/AlertTitle"
-import Home from './Home'
-// import {  } from "react-router-dom"
 
 function Login({ currentUser, setCurrentUser }) {
   const [username, setUsername] = useState("")
@@ -17,7 +15,7 @@ function Login({ currentUser, setCurrentUser }) {
       This is an error alert — <strong>check it out!</strong>
     </Alert>
   )
-  function handleSubmit(e) {
+  function handleLogin(e) {
     e.preventDefault()
     fetch("/login", {
       method: 'POST',
@@ -50,7 +48,7 @@ function Login({ currentUser, setCurrentUser }) {
   return (
     <>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <label>
           Username
           <input

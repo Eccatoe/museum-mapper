@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import MuseumContainer from "./MuseumContainer"
 
-function Home() {
+function Home({currentUser}) {
   const [museums, setMuseums] = useState([])
 
 
@@ -12,6 +12,8 @@ function Home() {
       .then((r) => r.json())
       .then((data)=>setMuseums(data))
   }, [])
+
+  console.log(currentUser)
   return (
     <>
       <MuseumContainer museums={museums} />

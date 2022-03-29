@@ -19,6 +19,8 @@ gem "rack-cors"
 
 gem "faker"
 
+gem "byebug"
+
 gem "active_model_serializers"
 
 gem "irb"
