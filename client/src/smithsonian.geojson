@@ -1,6 +1,8 @@
 {
+  "type": "FeatureCollection",
   "features": [
     {
+      "id": 1,
       "geometry": {
         "coordinates": [
           -77.0229615932543,
@@ -14,6 +16,7 @@
       }
     },
     {
+      "id": 2,
       "geometry": {
         "coordinates": [
           -76.97682976256489,
@@ -27,6 +30,7 @@
       }
     },
     {
+      "id": 3,
       "geometry": {
         "coordinates": [
           -77.01975788954995,
@@ -40,6 +44,7 @@
       }
     },
     {
+      "id": 4,
       "geometry": {
         "coordinates": [
           -77.03270727976185,
@@ -53,6 +58,7 @@
       }
     },
     {
+      "id": 5,
       "geometry": {
         "coordinates": [
           -77.02549143187714,
@@ -66,6 +72,7 @@
       }
     },
     {
+      "id": 6,
       "geometry": {
         "coordinates": [
           -77.03001390674564,
@@ -79,6 +86,7 @@
       }
     },
     {
+      "id": 7,
       "geometry": {
         "coordinates": [
           -77.0264339067458,
@@ -92,6 +100,7 @@
       }
     },
     {
+      "id": 8,
       "geometry": {
         "coordinates": [
           -77.01674721230407,
@@ -105,6 +114,7 @@
       }
     },
     {
+      "id": 9,
       "geometry": {
         "coordinates": [
           -77.02602146627063,
@@ -118,6 +128,7 @@
       }
     },
     {
+      "id": 10,
       "geometry": {
         "coordinates": [
           -77.02297536441844,
@@ -131,6 +142,7 @@
       }
     },
     {
+      "id": 11,
       "geometry": {
         "coordinates": [
           -77.00820430489323,
@@ -144,6 +156,7 @@
       }
     },
     {
+      "id": 12,
       "geometry": {
         "coordinates": [
           -77.03909805886173,
@@ -157,6 +170,7 @@
       }
     },
     {
+      "id": 13,
       "geometry": {
         "coordinates": [
           -77.02298970304095,
@@ -170,6 +184,7 @@
       }
     },
     {
+      "id": 14,
       "geometry": {
         "coordinates": [
           -77.02599163558186,
@@ -183,6 +198,7 @@
       }
     },
     {
+      "id": 15,
       "geometry": {
         "coordinates": [
           -77.04966844641824,
@@ -196,6 +212,7 @@
       }
     },
     {
+      "id": 16,
       "geometry": {
         "coordinates": [
           -77.0229286183864,
@@ -209,6 +226,7 @@
       }
     },
     {
+      "id": 17,
   "geometry": {
     "coordinates": [
       -77.03272303372984,
@@ -221,6 +239,5 @@
     "name": "United States Holocaust Memorial Museum"
   }
 }
-  ],
-  "type": "FeatureCollection"
+  ]
 }
