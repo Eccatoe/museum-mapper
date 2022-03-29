@@ -15,12 +15,12 @@ import Grid from "@mui/material/Grid"
 
 function MuseumContainer({ museums }) {
   const m = museums.map((m) => m.name)
-  function handleMouseOver() {
-    console.log(m)
-  }
+  // function handleMouseOver() {
+  //   console.log(m)
+  // }
 
   const createMuseumCard = museums.map((item, index) => (
-    <Card key={index} sx={{ maxWidth: 345 }} onMouseOver={handleMouseOver}>
+    <Card key={index} sx={{ maxWidth: 345 }} >
       <CardMedia
         component="img"
         height="194"

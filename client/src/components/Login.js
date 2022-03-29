@@ -1,14 +1,15 @@
-import React, { useState } from "react"
-import Auth from "./Auth"
-import { Link } from "react-router-dom"
+import React, { useState} from "react"
+import { Link, useNavigate } from "react-router-dom"
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
 import AlertTitle from "@mui/material/AlertTitle"
-// import { useHistory } from "react-router-dom"
+import Home from './Home'
+// import {  } from "react-router-dom"
 
 function Login({ currentUser, setCurrentUser }) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  let navigate=useNavigate()
 
   const alertMessage = (
     <Alert severity="error">
@@ -19,18 +20,32 @@ function Login({ currentUser, setCurrentUser }) {
   function handleSubmit(e) {
     e.preventDefault()
     fetch("/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         username,
-        password,
-      }).then((res) => {
-        if (res.ok) {
-          res.json().then((currentUser) => setCurrentUser(currentUser))
-        } else alert(alertMessage)
+        password
       }),
     })
+    .then(response => {
+      if (response.ok){
+        response.json().then((currentUser) => setCurrentUser(currentUser))
+        navigate('/home')
+      } else alert("No way Jose")
+    })
   }
+
+  function handleLogOut(){
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+    console.log(currentUser)
+  }
+
+  console.log(currentUser)
+
 
   return (
     <>
@@ -55,6 +70,7 @@ function Login({ currentUser, setCurrentUser }) {
 
         <input type="submit" value="Login" />
       </form>
+      <button onClick={handleLogOut}>Log Out</button>
 
       {/* <Auth /> */}
 
