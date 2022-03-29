@@ -12,6 +12,7 @@ import Avatar from "@mui/material/Avatar"
 import Button from "@mui/material/Button"
 import Tooltip from "@mui/material/Tooltip"
 import MenuItem from "@mui/material/MenuItem"
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const pages = ["login", "signup", "booktour"]
 const settings = ["Profile", "Account", "Dashboard", "Logout"]
@@ -122,7 +123,7 @@ function NavBar() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <AccountCircleIcon  fontSize="large" style={{color:"white"}}/>
                 </IconButton>
               </Tooltip>
               <Menu
