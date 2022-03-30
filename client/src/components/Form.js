@@ -1,6 +1,6 @@
 import Swipe from "./Swipe"
 
-function TourForm() {
+function Form() {
   return (
     <>
       <Swipe />
@@ -8,4 +8,4 @@ function TourForm() {
   )
 }
 
-export default TourForm
+export default Form

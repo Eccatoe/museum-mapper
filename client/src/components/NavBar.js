@@ -1,4 +1,5 @@
-import React from "react";
+import {useContext, useState} from "react";
+import {UserContext} from './UserContext'
 import { Link, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -17,9 +18,11 @@ import AppAdapter from "../adapters/AppAdapter";
 const pages = ["login", "signup", "booktour"];
 const settings = ["Profile", "Logout"];
 
-function NavBar({currentUser}) {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+function NavBar() {
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const {currentUser}=useContext(UserContext)
+  const {setCurrentUser}=useContext(UserContext)
   let navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
@@ -39,16 +42,17 @@ function NavBar({currentUser}) {
 
   function handleSelect(e) {
     const path = e.target.textContent.toLowerCase();
-    console.log(path==="profile")
     if (path === "profile" && currentUser) {
       navigate('/profile');
     } else if (!currentUser){
       navigate('/login')
     } else if (path==="logout"){
       AppAdapter.logout()
+      setCurrentUser(null)
       navigate('/home')
     } 
   }
+  console.log(currentUser)
   
   return (
     <div>

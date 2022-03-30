@@ -1,5 +1,9 @@
+import {useContext} from "react";
+import {UserContext} from './UserContext'
 import Tour from './Tour'
-function UserProfile({ currentUser }) {
+
+function UserProfile() {
+  const {currentUser}=useContext(UserContext)
 
   return (
     <>

@@ -1,4 +1,7 @@
+
+
 const AppAdapter ={
+
     auth:  () =>  fetch('/me').then(res => res.json()),
     getMuseums: ()=>fetch('/museums').then(res => res.json()),
     signup: (example)=>fetch("/signup", {
@@ -8,7 +11,7 @@ const AppAdapter ={
         },
         body: JSON.stringify(example),
       }),
-    logout: ()=>fetch('/logout', {method: 'DELETE'}),
+    logout: ()=>fetch('/logout', {method: 'DELETE'})
 }
 
 export default AppAdapter

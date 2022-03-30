@@ -1,13 +1,16 @@
-import React, { useState} from "react"
+import React, { useState, useContext } from "react"
+import {UserContext} from './UserContext'
 import { Link, useNavigate } from "react-router-dom"
 import Button from "@mui/material/Button"
 import Alert from "@mui/material/Alert"
 import AlertTitle from "@mui/material/AlertTitle"
 import AppAdapter from '../adapters/AppAdapter'
 
-function Login({ currentUser, setCurrentUser }) {
+function Login() {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const {currentUser}=useContext(UserContext)
+  const {setCurrentUser}=useContext(UserContext)
   let navigate=useNavigate()
 
   const alertMessage = (
