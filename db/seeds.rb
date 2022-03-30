@@ -129,7 +129,7 @@ Museum.create(
     category: "Zoo", 
     link: "https://nationalzoo.si.edu/", 
     image: "https://nationalzoo.si.edu/sites/default/files/animals/giantpanda-007.jpg",
-    about: "the Smithsonian's National Zoo sits on 163 acres in the heart of Washington, D.C.'s Rock Creek Park. Founded in 1889, the Zoo is currently home to more than 2,700 animals representing more than 390 species."
+    about: "The Smithsonian's National Zoo sits on 163 acres in the heart of Washington, D.C.'s Rock Creek Park. Founded in 1889, the Zoo is currently home to more than 2,700 animals representing more than 390 species."
 )
 Museum.create(
     name: "National Archives", 
