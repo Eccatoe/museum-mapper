@@ -1,46 +1,45 @@
-import React, { useState, useContext } from "react"
-import {UserContext} from './UserContext'
-import { Link, useNavigate } from "react-router-dom"
-import Button from "@mui/material/Button"
-import Alert from "@mui/material/Alert"
-import AlertTitle from "@mui/material/AlertTitle"
-import AppAdapter from '../adapters/AppAdapter'
+import React, { useState, useContext } from "react";
+import { UserContext } from "./UserContext";
+import { Link, useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+import AppAdapter from "../adapters/AppAdapter";
 
 function Login() {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const {currentUser}=useContext(UserContext)
-  const {setCurrentUser}=useContext(UserContext)
-  let navigate=useNavigate()
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { currentUser } = useContext(UserContext);
+  const { setCurrentUser } = useContext(UserContext);
+  let navigate = useNavigate();
 
   const alertMessage = (
     <Alert severity="error">
       <AlertTitle>Error</AlertTitle>
       This is an error alert — <strong>check it out!</strong>
     </Alert>
-  )
+  );
   function handleLogin(e) {
-    e.preventDefault()
+    e.preventDefault();
     fetch("/login", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         username,
-        password
+        password,
       }),
-    })
-    .then(response => {
-      if (response.ok){
-        response.json().then((currentUser) => setCurrentUser(currentUser))
-        navigate('/home')
-      } else alert("No way Jose")
-    })
+    }).then((response) => {
+      if (response.ok) {
+        response.json().then((currentUser) => setCurrentUser(currentUser));
+        navigate("/home");
+      } else alert("No way Jose");
+    });
   }
-  
-  function handleLogOut(){
-    AppAdapter.logout()
+
+  function handleLogOut() {
+    AppAdapter.logout();
   }
 
   return (
@@ -68,7 +67,6 @@ function Login() {
       </form>
       <button onClick={handleLogOut}>Log Out</button>
 
-
       <h1>Don't have an account?</h1>
       <Button>Sign Up</Button>
       <Link style={{ textDecoration: "none", color: "white" }} to={`/signup`}>
@@ -76,7 +74,7 @@ function Login() {
         Sign Up
       </Link>
     </>
-  )
+  );
 }
 
-export default Login
+export default Login;

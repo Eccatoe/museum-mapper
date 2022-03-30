@@ -11,7 +11,7 @@ end
 
 
 Museum.create(
-    name: "Anacostia Community Museum"
+    name: "Anacostia Community Museum",
     address: "1901 Fort Pl SE", 
     category: "African American History Culture", 
     link: "https://anacostia.si.edu/", 
@@ -97,7 +97,7 @@ Museum.create(
     category: "History", 
     link: "https://postalmuseum.si.edu/", 
     image: "https://www.trolleytours.com/wp-content/uploads/2016/06/national-postal-museum-exhibit.jpg",
-    about: "Located in the historic D.C. City Post Office next to the restored Union Station, the Smithsonian’s National Postal Museum showcases the largest and most comprehensive collection of stamps and philatelic material in the world—including postal stationery, vehicles used to transport the mail, mailboxes, meters, cards and letters, and postal materials that predate the use of stamps. Visitors can walk along a Colonial post road, ride with the mail in a stagecoach, browse through a small town post office from the 1920s, receive free stamps to start a collection and more."
+    about: "Located in the historic D.C. City Post Office next to the restored Union Station, the Smithsonian's National Postal Museum showcases the largest and most comprehensive collection of stamps and philatelic material in the world—including postal stationery, vehicles used to transport the mail, mailboxes, meters, cards and letters, and postal materials that predate the use of stamps. Visitors can walk along a Colonial post road, ride with the mail in a stagecoach, browse through a small town post office from the 1920s, receive free stamps to start a collection and more."
 )
 Museum.create(
     name: "Renwick Gallery", 

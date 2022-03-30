@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import NavBar from "./components/NavBar"
 import Home from "./components/Home"
 import UserProfile from "./components/UserProfile"
-import Form from "./components/Form"
+import Form from "./components/MuseumPage"
 import Login from "./components/Login"
 import Signup from './components/Signup'
 import AppAdapter from './adapters/AppAdapter'
