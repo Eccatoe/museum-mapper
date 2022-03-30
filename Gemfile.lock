@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: ca0ab78388e886c44e51e323fd0df84c4ac97a9c
+  specs:
+    stripe (5.48.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -184,6 +190,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.2, >= 7.0.2.3)
   sqlite3 (~> 1.4)
+  stripe!
   tzinfo-data
 
 RUBY VERSION

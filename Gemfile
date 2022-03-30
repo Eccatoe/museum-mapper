@@ -19,6 +19,8 @@ gem "rack-cors"
 
 gem "faker"
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem "byebug"
 
 gem "active_model_serializers"

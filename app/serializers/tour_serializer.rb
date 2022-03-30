@@ -1,5 +1,4 @@
 class TourSerializer < ActiveModel::Serializer
-  attributes :id, :name
-
-  # has_many :users
+  attributes :id, :museum_id, :name
+  belongs_to :museum
 end

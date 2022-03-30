@@ -11,7 +11,7 @@ import Tab from "@mui/material/Tab";
 import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 
-function Form() {
+function MuseumPage() {
   const [selected, setSelected] = useState({});
   const [value, setValue] = useState("1");
 
@@ -102,7 +102,7 @@ function Form() {
             <Typography variant="caption">-{selected.address}-</Typography>
             <Typography variant="h6">{selected.about}</Typography>
           </Box>
-              <TourForm/>
+              <TourForm selected={selected}/>
 
         </Grid>
       </Grid>
@@ -112,4 +112,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default MuseumPage;

@@ -11,8 +11,7 @@ const AppAdapter ={
         },
         body: JSON.stringify(example),
       }),
-    logout: ()=>fetch('/logout', {method: 'DELETE'}),
-    tourForm: "stuff"
+    logout: ()=>fetch('/logout', {method: 'DELETE'})
 }
 
 export default AppAdapter

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import AppAdapter from "../adapters/AppAdapter";
 
 function Signup() {
-  const { currentUser } = useContext(UserContext);
   const { setCurrentUser } = useContext(UserContext);
   let navigate = useNavigate();
 
