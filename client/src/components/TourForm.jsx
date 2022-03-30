@@ -19,7 +19,7 @@ function TourForm() {
     type: "",
     price: null,
     tour_id: null,
-    user_id: null,
+    user_id: currentUser.id
   });
 
   function datePick(newDateValue){
