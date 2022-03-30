@@ -27,7 +27,7 @@ function App() {
       <Routes>
         <Route exact path="/home" element={<Home museums={museums} setMuseums={setMuseums}/>} />
         <Route exact path="/profile" element={<UserProfile/>} />
-        <Route exact path="/tour_form/:id" element={<Form museums={museums} setMuseums={setMuseums}/>} />
+        <Route exact path="/museums/:id" element={<Form museums={museums} setMuseums={setMuseums}/>} />
         <Route
           exact
           path="/login"

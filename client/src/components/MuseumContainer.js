@@ -34,7 +34,7 @@ function MuseumContainer({ museums }) {
         <IconButton aria-label="share" href={item.link}>
           <ShareIcon />
         </IconButton>
-        <Button startIcon={<TourIcon/>} > <Link to={{pathname: `/tour_form/${item.id}`}}>View Tours</Link></Button>
+        <Button startIcon={<TourIcon/>}> <Link to={{pathname: `/museums/${item.id}`}}>View Tours</Link></Button>
       </CardActions>
     </Card>
   ))
