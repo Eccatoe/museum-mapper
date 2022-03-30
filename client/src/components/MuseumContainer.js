@@ -1,4 +1,4 @@
-import React from "react"
+import {Link} from "react-router-dom"
 import Map from "./Map"
 import Container from "@mui/material/Container"
 import Masonry from "@mui/lab/Masonry"
@@ -7,14 +7,17 @@ import Card from "@mui/material/Card"
 import CardMedia from "@mui/material/CardMedia"
 import CardActions from "@mui/material/CardActions"
 import IconButton from "@mui/material/IconButton"
+import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import FavoriteIcon from "@mui/icons-material/Favorite"
 import ShareIcon from "@mui/icons-material/Share"
+import TourIcon from '@mui/icons-material/Tour'
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 
 function MuseumContainer({ museums }) {
-console.log(museums)
+
+
   const createMuseumCard = museums.map((item, index) => (
     <Card key={index} sx={{ maxWidth: 345 }} >
       <CardMedia
@@ -31,6 +34,7 @@ console.log(museums)
         <IconButton aria-label="share" href={item.link}>
           <ShareIcon />
         </IconButton>
+        <Button startIcon={<TourIcon/>} > <Link to={{pathname: `/tour_form/${item.id}`}}>View Tours</Link></Button>
       </CardActions>
     </Card>
   ))

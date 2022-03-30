@@ -2,8 +2,7 @@ import { useState, useEffect} from "react"
 import MuseumContainer from "./MuseumContainer"
 import AppAdapter from '../adapters/AppAdapter'
 
-function Home() {
-  const [museums, setMuseums] = useState([])
+function Home({museums, setMuseums}) {
 
   useEffect(() => {
     AppAdapter.getMuseums()

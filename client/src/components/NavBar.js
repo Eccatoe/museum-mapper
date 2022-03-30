@@ -52,7 +52,6 @@ function NavBar() {
       navigate('/home')
     } 
   }
-  console.log(currentUser)
   
   return (
     <div>

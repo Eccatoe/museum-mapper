@@ -12,6 +12,8 @@ import "./App.css"
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
+  const [museums, setMuseums] = useState([])
+
 
   useEffect(() => {
     fetch('/me').then(res => res.json())
@@ -23,9 +25,9 @@ function App() {
       <UserContext.Provider value={{currentUser, setCurrentUser}}>
       <NavBar />
       <Routes>
-        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/home" element={<Home museums={museums} setMuseums={setMuseums}/>} />
         <Route exact path="/profile" element={<UserProfile/>} />
-        <Route exact path="/tour_form" element={<Form />} />
+        <Route exact path="/tour_form/:id" element={<Form museums={museums} setMuseums={setMuseums}/>} />
         <Route
           exact
           path="/login"

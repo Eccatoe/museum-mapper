@@ -5,24 +5,12 @@ import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
 // import "../smithsonian.geojson";
 
 function Map() {
-  // const [museumData, setMuseumData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch(smithsonian)
-  //     .then((r) => r.json())
-  //     .then((res) => console.log(res));
-  // }, []);
-
-
 
   let [viewport, setViewport] = useState({
     latitude: 38.892,
     longitude: -77.014,
     minZoom: 11,
   });
-
-
-  
 
   return (
     <>

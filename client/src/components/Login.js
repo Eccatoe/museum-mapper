@@ -38,9 +38,7 @@ function Login() {
       } else alert("No way Jose")
     })
   }
-
-  console.log(currentUser)
-
+  
   function handleLogOut(){
     AppAdapter.logout()
   }
