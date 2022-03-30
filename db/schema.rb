@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_25_205437) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_30_150214) do
   create_table "museums", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_25_205437) do
     t.datetime "updated_at", null: false
     t.string "link"
     t.string "image"
+    t.string "about"
   end
 
   create_table "tours", force: :cascade do |t|
