@@ -1,4 +1,9 @@
 class UserToursController < ApplicationController
+
+    def index 
+        render json: UserTour.all, status: :ok
+    end
+    
     def create
         user_tour=UserTour.create!(user_tour_params)
         render json: user_tour
