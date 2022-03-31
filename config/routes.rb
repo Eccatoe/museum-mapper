@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :tours
   resources :users
   resources :user_tours
+  resources :checkouts
   post '/login', to: 'sessions#login'
   post '/signup', to: 'users#create'  
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: 'users#me'
+  
 end
