@@ -1,6 +1,6 @@
 import React from "react"
 
-function UserTourCard({ type, price, time }) {
+function UserTourCard() {
   return <div>UserTourCard</div>
 }
 

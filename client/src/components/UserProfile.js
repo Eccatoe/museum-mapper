@@ -17,27 +17,24 @@ function UserProfile() {
   useEffect(() => {
     fetch("/user_tours")
       .then((r) => r.json())
-      .then(setUserTourArray)
+      .then((r) => console.log(r))
   }, [])
 
   const createUserTourCards = userTourArray.map((userTour) => (
-    <UserTourCard
-      key={userTour.id}
-      price={userTour.price}
-      time={userTour.time}
-      type={userTour.tour.name}
-    />
+    <UserTourCard key={userTour.id} userTour={userTour} />
   ))
 
   return (
     <>
       <h1>Welcome, {currentUser.first_name}</h1>
-      {currentUser && currentUser.tours ? (
+      {createUserTourCards}
+
+      {/* {currentUser && currentUser.tours ? (
         { createUserTourCards }
       ) : (
         // <Tour tours={currentUser.tours} />
         <p>You have no tours</p>
-      )}
+      )} */}
     </>
   )
 }
