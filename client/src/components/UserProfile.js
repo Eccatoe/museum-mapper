@@ -18,10 +18,10 @@ console.log(userTourArray)
   ))
 
   return (
-    <>
+    <div id="portal">
       <h1>Welcome, {currentUser.first_name}</h1>
       {createUserTourCards}
-    </>
+    </div>
   )
 }
 

@@ -76,6 +76,7 @@ function TourForm({ selected }) {
         <DateTimePicker
           shouldDisableDate={filterWeekends}
           minTime={new Date(0, 0, 0, 9)}
+          maxTime={new Date(0, 0, 0, 15)}
           maxDate={new Date("2022-12-31")}
           minDate={new Date()}
           renderInput={(props) => <TextField {...props} />}

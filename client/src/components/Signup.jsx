@@ -78,7 +78,9 @@ function Signup() {
               />
             </label>
 
-            <input type="submit" value="Login" />
+            <input type="submit" value="Signup" />
+            <div>Have an account?</div>
+            <button onClick={navigate('/login')}>Login</button>
           </form>
         </div>
       </div>

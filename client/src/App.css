@@ -56,6 +56,7 @@ img {
 
 h1{
   font-size: 40px;
+  margin-top:0;
 }
 .loginSignupDiv {
   display: flex;
@@ -71,6 +72,7 @@ h1{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
   height: 60vh;
   width: 30vw;
   background: transparent;
@@ -99,19 +101,29 @@ h1{
   padding: 3px;
   border-radius: 5px;
   border: 1px solid #161511;
-  background: #b2b0ab 
+  background: #b2b0ab ;
+  margin-top: 10px;
  }
 
  #splash{
+   background-size: cover;
+   height: 100vh;
+   width: 100vw;
    text-align:center;
  }
-#myVideo{
-  z-index: -1
-}
+
 
 .explore{
   text-decoration: none;
-  padding: 50vh 0;
+  position:relative;
+  top: 10vh;
+  font-size:70px;
+  color: #90b0ca;
+  text-shadow: 0 0 2px black
+}
+
+#portal{
+
 }
 
 
