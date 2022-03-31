@@ -149,9 +149,9 @@ Museum.create(
 )
 
 Museum.all.each do |m|
-    Tour.create(name: "Standard", museum_id: m.id) 
-    Tour.create(name: "Extended", museum_id: m.id) 
-    Tour.create(name: "Private", museum_id: m.id) 
+    Tour.create(name: "Standard", price: 40, museum_id: m.id) 
+    Tour.create(name: "Extended", price: 60, museum_id: m.id) 
+    Tour.create(name: "Private", price: 100, museum_id: m.id) 
 end
 
 

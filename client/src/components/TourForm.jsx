@@ -11,12 +11,12 @@ import Select from "@mui/material/Select"
 import { format } from "date-fns"
 
 function TourForm({ selected }) {
-  const { currentUser } = useContext(UserContext)
-  const [dateValue, setDateValue] = useState("")
-  const [time, setTime] = useState("")
-  const [price, setPrice] = useState(0)
-  const [tour_id, setTourId] = useState("")
-  const user_id = currentUser.id
+  const { currentUser } = useContext(UserContext);
+  const [dateValue, setDateValue] = useState("");
+  const [time, setTime] = useState("");
+  const [price, setPrice] = useState(0);
+  const [tour_id, setTourId] = useState("");
+  const user_id = currentUser.id;
 
   function handleBookTour(e) {
     e.preventDefault()
@@ -42,15 +42,14 @@ function TourForm({ selected }) {
   ))
 
   function datePick(newDateValue) {
-    setDateValue(newDateValue)
-    const formattedDate = format(newDateValue, "EEEE, MMM d yyyy 'at' h:mmaaa")
+    setDateValue(newDateValue);
+    const formattedDate = format(newDateValue, "EEEE, MMM d yyyy 'at' h:mmaaa");
+    setTime(formattedDate.toString());
     console.log(formattedDate)
-
-    setTime(dateValue.toString())
   }
 
   function handleTourSelect(e) {
-    setTourId(e.target.value)
+    setTourId(e.target.value);
   }
 
   function filterWeekends(date) {
@@ -94,4 +93,4 @@ function TourForm({ selected }) {
   )
 }
 
-export default TourForm
+export default TourForm;

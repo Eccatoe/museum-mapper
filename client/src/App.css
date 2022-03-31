@@ -46,6 +46,13 @@ img {
   width: 100vw;
   /* filter: brightness(50%) */
 }
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 
 h1{
   font-size: 40px;
@@ -88,12 +95,23 @@ h1{
  input:focus {
   outline:none;
 }
- button{
+ .loginSignupDiv button{
   padding: 3px;
   border-radius: 5px;
   border: 1px solid #161511;
   background: #b2b0ab 
  }
 
+ #splash{
+   text-align:center;
+ }
+#myVideo{
+  z-index: -1
+}
+
+.explore{
+  text-decoration: none;
+  padding: 50vh 0;
+}
 
 

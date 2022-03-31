@@ -1,4 +1,4 @@
 class TourSerializer < ActiveModel::Serializer
-  attributes :id, :museum_id, :name
+  attributes :id, :museum_id, :name, :price
   belongs_to :museum
 end
