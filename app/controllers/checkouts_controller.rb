@@ -6,7 +6,7 @@ class CheckoutsController < ApplicationController
 
    
     def create 
-        Stripe.api_key = pk_test_51KieRWLzsVUqCQVoh0LMaVUdX9NBFi6TPvkoLJJDPg9bh8D0xxgMaBe8WS9ggMYXA5MGjLNdxHGES0YC6UlMU1Tc00vfu7qsMP
+      # missing stripe key
 
         session = Stripe::Checkout::Session.create(
             payment_method_types: ['card'],

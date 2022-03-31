@@ -1,39 +1,40 @@
-import React, { useState, useContext } from "react";
-import { UserContext } from "./UserContext";
-import { useNavigate } from "react-router-dom";
-import AppAdapter from "../adapters/AppAdapter";
+import React, { useState, useContext } from "react"
+import { UserContext } from "./UserContext"
+import { useNavigate } from "react-router-dom"
+import AppAdapter from "../adapters/AppAdapter"
+import Container from "@mui/material/Container"
 
 function Signup() {
-  const { setCurrentUser } = useContext(UserContext);
-  let navigate = useNavigate();
+  const { setCurrentUser } = useContext(UserContext)
+  let navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
     username: "",
     password: "",
-  });
+  })
 
   function handleInput(e) {
-    const objKey = e.target.name;
-    const objValue = e.target.value;
-    setFormData({ ...formData, [objKey]: objValue });
+    const objKey = e.target.name
+    const objValue = e.target.value
+    setFormData({ ...formData, [objKey]: objValue })
   }
 
   function handleSignup(e) {
-    e.preventDefault();
+    e.preventDefault()
     AppAdapter.signup(formData).then((res) => {
       if (res.ok) {
-        res.json().then((currentUser) => setCurrentUser(currentUser));
-        navigate("/login");
+        res.json().then((currentUser) => setCurrentUser(currentUser))
+        navigate("/login")
       }
-    });
+    })
   }
 
   return (
-    <>
+    <div className="loginSignupDiv">
       <h1>Make a New Account</h1>
-      <form onSubmit={handleSignup}>
+      <form className="loginSignupForm" onSubmit={handleSignup}>
         <label>
           First Name
           <input
@@ -73,8 +74,8 @@ function Signup() {
 
         <input type="submit" value="Login" />
       </form>
-    </>
-  );
+    </div>
+  )
 }
 
-export default Signup;
+export default Signup

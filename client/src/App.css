@@ -1,6 +1,7 @@
 body {
-  /* background-color: #081317; */
+  background-color: #081317;
   overflow: hidden;
+  color: white;
 }
 
 img {
@@ -28,4 +29,15 @@ img {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
   margin-bottom: 30px;
+}
+
+.loginSignupDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginSignupForm {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
 }
