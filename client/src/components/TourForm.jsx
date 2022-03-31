@@ -1,80 +1,88 @@
-import { useState, useContext, useEffect } from "react"
-import { UserContext } from "./UserContext"
-import DateTimePicker from "@mui/lab/DateTimePicker"
-import TextField from "@mui/material/TextField"
-import InputLabel from "@mui/material/InputLabel"
-import MenuItem from "@mui/material/MenuItem"
-import FormHelperText from "@mui/material/FormHelperText"
-import FormControl from "@mui/material/FormControl"
-import Select from "@mui/material/Select"
-import { format } from "date-fns"
-import CheckOutWithStripe from "./CheckoutWithStripe"
+import { useState, useContext, useEffect } from "react";
+import { UserContext } from "./UserContext";
+import DateTimePicker from "@mui/lab/DateTimePicker";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import { format } from "date-fns";
 
 function TourForm({ selected }) {
-  const { currentUser } = useContext(UserContext)
-  const [dateValue, setDateValue] = useState("")
-  const [tourFormData, setTourFormData] = useState({
-    time: "",
-    price: 0,
-    tour_id: "",
-    user_id: currentUser.id,
-  })
+  const { currentUser } = useContext(UserContext);
+  const [dateValue, setDateValue] = useState("");
+  const [time, setTime] = useState("");
+  const [price, setPrice] = useState(0);
+  const [tour_id, setTourId] = useState("");
+  const user_id=currentUser.id
 
-  const tourList = selected.tours
+  function handleBookTour(e) {
+    e.preventDefault();
+    fetch("/user_tours", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        time,
+        price,
+        tour_id,
+        user_id
+      }),
+    }).then((r) => r.json());
+  }
+
+  const tourList = selected.tours;
   const tourOptions = tourList?.map((t) => (
     <MenuItem key={t.id} value={t.id}>
       {t.name}
     </MenuItem>
-  ))
-  console.log(tourFormData)
+  ));
 
   function datePick(newDateValue) {
-    setDateValue(newDateValue)
-    tourFormData.time = dateValue
-    console.log(dateValue)
+    setDateValue(newDateValue);
+    const formattedDate=format(newDateValue,"EEEE, MMM d yyyy 'at' h:mmaaa")
+      console.log(formattedDate)
+
+    setTime(dateValue.toString())
   }
 
   function handleTourSelect(e) {
-    const objKey = e.target.name
-    const objValue = e.target.value
-    setTourFormData({ ...tourFormData, [objKey]: objValue })
+    setTourId(e.target.value)
   }
 
   return (
     <>
-      <FormControl required>
-        <InputLabel>Tour</InputLabel>
-        <Select
-          name="tour_id"
-          value={tourFormData.tour_id}
-          label="Tour"
-          onChange={handleTourSelect}
-        >
-          {tourOptions && tourOptions}
-        </Select>
-        <FormHelperText>Required</FormHelperText>
-      </FormControl>
-      <DateTimePicker
-        renderInput={(props) => <TextField {...props} />}
-        label="DateTimePicker"
-        value={dateValue}
-        onChange={(newDateValue) => {
-          datePick(newDateValue)
-        }}
-      />
-      <CheckOutWithStripe />
+      <form onSubmit={handleBookTour}>
+        <FormControl required>
+          <InputLabel>Tour</InputLabel>
+          <Select
+          size="large"
+            value={tour_id}
+            label="Tour"
+            onChange={handleTourSelect}
+          >
+            {tourOptions && tourOptions}
+          </Select>
+          <FormHelperText>Required</FormHelperText>
+        </FormControl><br/>
+        <DateTimePicker
+          renderInput={(props) => <TextField {...props} />}
+          label="DateTimePicker"
+          value={dateValue}
+          onChange={(newDateValue) => {
+            datePick(newDateValue);
+          }}
+        />
+        <Button size="large" variant="outlined" type="submit">Book</Button>
+        
+      </form>
     </>
-  )
+  );
 }
 
-export default TourForm
+export default TourForm;
 
-// const result = format(
-//     new Date(2014, 1, 11, 15, 30),
-//     "EEEEEE, MMM d yyyy h:mmaaa"
-//   );
-//   console.log(result);
 
-// TourForm.defaultProps = {
-//     slected: {tours: []}
-// }

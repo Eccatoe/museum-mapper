@@ -34,37 +34,66 @@ img {
 
 #login{
   background: url('https://images.unsplash.com/photo-1581097543550-b3cbe2e6ea6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
 }
 #signup{
-  background: url('https://images.unsplash.com/photo-1617581629397-a72507c3de9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80') no-repeat;
-  background-size: 100%;
-
+  background: url('https://www.hotelgeorge.com/images/1700-960/union-station-hero-249c3a1c.jpg') no-repeat;
+  /* background: url('https://lp-cms-production.imgix.net/image_browser/Cherry%20Blossoms%20and%20monument.jpg') no-repeat; */
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  /* filter: brightness(50%) */
 }
 
 h1{
   font-size: 40px;
 }
 .loginSignupDiv {
-  margin-top:20vh;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  justify-content: center;
+  font-weight: 600;
+  /* text-shadow: 0px 0px 3px white; */
 }
 
 .loginSignupForm {
-  margin-top:40px;
-
+  margin-top:90px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 40vh;
-  width: 40vw;
-  justify-content: space-evenly;
+  height: 60vh;
+  width: 30vw;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  border-radius:20px;
+  box-shadow: 0px 0px 40px black;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
  input {
    margin: 10px;
+   margin-bottom: 20px;
+    padding: 3px;
+   border-radius: 5px;
+   border: 1px solid #161511;
+   background: #b2b0ab 
  }
+ input:focus {
+  outline:none;
+}
+ button{
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #161511;
+  background: #b2b0ab 
+ }
+
+
 

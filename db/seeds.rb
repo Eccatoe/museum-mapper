@@ -80,7 +80,7 @@ Museum.create(
     address: "10th St & Constitution Ave NW", 
     category: "Natural Science History", 
     link: "https://naturalhistory.si.edu/", 
-    image: "https://unsplash.com/photos/WDn-p4QqlLs",
+    image: "http://shfwire.com/sites/default/files/images/Elephant.JPG",
     about: "The world's most popular natural history museum is dedicated to understanding the natural world and our place in it. Delve into the fascinating story of our planet, from its fiery beginnings through billions of years of transformation, and explore life on Earth through exhibitions and activities, collection objects and research that happens in the lab and in the field. The museum is larger than 18 football fields and is home to the largest natural history collection in the world."
 ) 
 Museum.create(
@@ -112,7 +112,7 @@ Museum.create(
     address: "800 G St NW", 
     category: "Art Culture", 
     link: "https://americanart.si.edu/", 
-    image: "https://unsplash.com/photos/xXJ5xPcknRA",
+    image: "https://smarthistory.org/wp-content/uploads/2019/09/wide-angle-full-sm.jpg",
     about: "The nation's first collection of American art offers an unparalleled record of the American experience, capturing the aspirations, character and imagination of the American people throughout three centuries. The museum is home to one of the largest and most inclusive collections of American art in the world, including works by such stylistically diverse luminaries as John Singleton Copley, Winslow Homer, and Georgia O'Keeffe, housed in one of the oldest public buildings constructed in early Washington."
 )
 Museum.create(
