@@ -2,6 +2,7 @@ body {
   background-color: #081317;
   overflow: hidden;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 
 img {
@@ -31,13 +32,39 @@ img {
   margin-bottom: 30px;
 }
 
+#login{
+  background: url('https://images.unsplash.com/photo-1581097543550-b3cbe2e6ea6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat;
+  background-size: 100%;
+}
+#signup{
+  background: url('https://images.unsplash.com/photo-1617581629397-a72507c3de9e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80') no-repeat;
+  background-size: 100%;
+
+}
+
+h1{
+  font-size: 40px;
+}
 .loginSignupDiv {
+  margin-top:20vh;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+
 }
 
 .loginSignupForm {
+  margin-top:40px;
+
   display: flex;
   flex-direction: column;
-  height: 50vh;
+  align-items: center;
+  height: 40vh;
+  width: 40vw;
+  justify-content: space-evenly;
 }
+ input {
+   margin: 10px;
+ }
+

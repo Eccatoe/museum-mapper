@@ -43,11 +43,12 @@ function Login() {
   }
 
   return (
+    <div  id="login" >
     <div className="loginSignupDiv">
       <h1>Login</h1>
       <form className="loginSignupForm" onSubmit={handleLogin}>
         <label>
-          Username
+          Username<br/>
           <input
             type="text"
             value={username}
@@ -55,7 +56,7 @@ function Login() {
           />
         </label>
         <label>
-          Password
+          Password<br/>
           <input
             type="password"
             value={password}
@@ -64,15 +65,11 @@ function Login() {
         </label>
 
         <input type="submit" value="Login" />
+        <button onClick={handleLogOut}>Log Out</button>
+        <h1>Don't have an account?</h1>
+        <button onClick={navigate('/signup')}>Sign Up</button>
       </form>
-      <button onClick={handleLogOut}>Log Out</button>
-
-      <h1>Don't have an account?</h1>
-      <Button>Sign Up</Button>
-      <Link style={{ textDecoration: "none", color: "white" }} to={`/signup`}>
-        {" "}
-        Sign Up
-      </Link>
+    </div>
     </div>
   )
 }

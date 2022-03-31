@@ -32,11 +32,12 @@ function Signup() {
   }
 
   return (
-    <div className="loginSignupDiv">
-      <h1>Make a New Account</h1>
+    <div id="signup">
+    <div  className="loginSignupDiv">
+      <h1>Make an Account</h1>
       <form className="loginSignupForm" onSubmit={handleSignup}>
         <label>
-          First Name
+          First Name<br/>
           <input
             type="text"
             name="first_name"
@@ -45,7 +46,7 @@ function Signup() {
           />
         </label>
         <label>
-          Last Name
+          Last Name<br/>
           <input
             type="text"
             name="last_name"
@@ -54,7 +55,7 @@ function Signup() {
           />
         </label>
         <label>
-          Username
+          Username<br/>
           <input
             type="text"
             name="username"
@@ -63,7 +64,7 @@ function Signup() {
           />
         </label>
         <label>
-          Password
+          Password<br/>
           <input
             type="password"
             name="password"
@@ -74,6 +75,7 @@ function Signup() {
 
         <input type="submit" value="Login" />
       </form>
+    </div>
     </div>
   )
 }
