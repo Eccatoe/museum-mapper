@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { Route, Routes } from "react-router-dom";
+import SplishSplash from './components/SplishSplash'
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import UserProfile from "./components/UserProfile";
@@ -22,9 +23,16 @@ function App() {
 
   return (
     <div>
+     
       <UserContext.Provider value={{ currentUser, setCurrentUser }}>
         <NavBar />
+        
         <Routes>
+        <Route
+            exact
+            path="/"
+            element={<SplishSplash/>}
+          />
           <Route
             exact
             path="/home"

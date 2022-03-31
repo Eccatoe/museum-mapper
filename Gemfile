@@ -19,6 +19,8 @@ gem "rack-cors"
 
 gem "faker"
 
+gem 'date'
+
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 gem "byebug"

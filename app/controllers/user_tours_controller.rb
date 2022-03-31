@@ -1,7 +1,8 @@
 class UserToursController < ApplicationController
 
     def index 
-        render json: UserTour.all, status: :ok
+        user_tour=UserTour.order_time
+        render json: user_tour
     end
     
     def create
@@ -12,6 +13,6 @@ class UserToursController < ApplicationController
     private
 
     def user_tour_params
-        params.permit(:price, :time, :tour_id, :user_id)
+        params.permit(:time, :tour_id, :user_id)
     end
 end

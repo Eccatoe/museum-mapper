@@ -16,7 +16,7 @@ function TourForm({ selected }) {
   const [time, setTime] = useState("");
   const [price, setPrice] = useState(0);
   const [tour_id, setTourId] = useState("");
-  const user_id=currentUser.id
+  const user_id = currentUser.id;
 
   function handleBookTour(e) {
     e.preventDefault();
@@ -29,7 +29,7 @@ function TourForm({ selected }) {
         time,
         price,
         tour_id,
-        user_id
+        user_id,
       }),
     }).then((r) => r.json());
   }
@@ -43,23 +43,21 @@ function TourForm({ selected }) {
 
   function datePick(newDateValue) {
     setDateValue(newDateValue);
-    const formattedDate=format(newDateValue,"EEEE, MMM d yyyy 'at' h:mmaaa")
-      console.log(formattedDate)
-
-    setTime(dateValue.toString())
+    const formattedDate = format(newDateValue, "EEEE, MMM d yyyy 'at' h:mmaaa");
+    setTime(formattedDate.toString());
+    console.log(formattedDate)
   }
 
   function handleTourSelect(e) {
-    setTourId(e.target.value)
+    setTourId(e.target.value);
   }
-
   return (
     <>
       <form onSubmit={handleBookTour}>
         <FormControl required>
           <InputLabel>Tour</InputLabel>
           <Select
-          size="large"
+            size="large"
             value={tour_id}
             label="Tour"
             onChange={handleTourSelect}
@@ -67,7 +65,8 @@ function TourForm({ selected }) {
             {tourOptions && tourOptions}
           </Select>
           <FormHelperText>Required</FormHelperText>
-        </FormControl><br/>
+        </FormControl>
+        <br />
         <DateTimePicker
           renderInput={(props) => <TextField {...props} />}
           label="DateTimePicker"
@@ -76,13 +75,12 @@ function TourForm({ selected }) {
             datePick(newDateValue);
           }}
         />
-        <Button size="large" variant="outlined" type="submit">Book</Button>
-        
+        <Button size="large" variant="outlined" type="submit">
+          Book
+        </Button>
       </form>
     </>
   );
 }
 
 export default TourForm;
-
-
