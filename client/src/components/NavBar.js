@@ -59,32 +59,64 @@ function NavBar() {
   return (
     <ThemeProvider theme={theme}>
       <div className="nav">
-        <AppBar style={{ backgroundColor: "transparent"}} position="static">
+        <AppBar style={{ backgroundColor: "#081417" }} position="static">
           <Container maxWidth="100%">
             <Toolbar disableGutters>
               <Typography
                 variant="h6"
                 noWrap
                 component="div"
-                sx={{ mr: 2, paddingLeft: 0, marginLeft:0,  display: { xs: "none", md: "flex", justifyContent: "flex-start" } }}
+                sx={{
+                  mr: 2,
+                  paddingLeft: 0,
+                  marginLeft: 0,
+                  display: {
+                    xs: "none",
+                    md: "flex",
+                    justifyContent: "flex-start",
+                  },
+                }}
               >
                 <Link
-                  style={{   
-                    textDecoration: "none", color: "white" }}
+                  style={{
+                    textDecoration: "none",
+                    color: "white",
+                  }}
                   to={`/`}
                 >
                   MUSEUM-MAPPER
                 </Link>
               </Typography>
 
-              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" , justifyContent: "flex-start"  } }}>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: {
+                    xs: "none",
+                    md: "flex",
+                    justifyContent: "flex-start",
+                  },
+                }}
+              >
                 {pages.map((page) => (
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: "white", display: "flex", padding: "0 30px" }}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "flex",
+                      padding: "0 30px",
+                    }}
                   >
-                    <Link style={{ color: "white", fontSize: "20px", textDecoration: "none"}} to={`/${page}`}>
+                    <Link
+                      style={{
+                        color: "white",
+                        fontSize: "20px",
+                        textDecoration: "none",
+                      }}
+                      to={`/${page}`}
+                    >
                       {page}
                     </Link>
                   </Button>

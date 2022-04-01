@@ -18,18 +18,18 @@ function Map() {
     longitude: -77.014,
     minZoom: 11,
   })
-  const dcMap = (
-    <ReactMapGL
-      {...viewport}
-      width="100%"
-      height="100vh"
-      onViewportChange={(newViewport) => setViewport(newViewport)}
-      mapStyle="mapbox://styles/eccatoe2517/cl15qreja000515o1mzsnxhyr"
-      mapboxApiAccessToken={process.env.REACT_APP_MAP_KEY}
-    />
+
+  return (
+    <>
+      <ReactMapGL
+        {...viewport}
+        width="100%"
+        height="100vh"
+        onViewportChange={(newViewport) => setViewport(newViewport)}
+        mapStyle="mapbox://styles/eccatoe2517/cl15qreja000515o1mzsnxhyr"
+        mapboxApiAccessToken="pk.eyJ1IjoiZWNjYXRvZTI1MTciLCJhIjoiY2wxNXFueDd0MDJmYTNpcXgydjU5NDk4ZyJ9.Oqcs3d2mqo-_yWAxOFmEAA"
+      />
+    </>
   )
-  console.log(mapInfo[0])
-  console.log(dcMap)
-  return <>{dcMap}</>
 }
 export default Map
