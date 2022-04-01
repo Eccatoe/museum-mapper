@@ -13,6 +13,50 @@ import Select from "@mui/material/Select"
 import { format } from "date-fns"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+const THEME = createTheme({
+  palette: {
+    text: {
+      primary: "#FFFFFF",
+      secondary: "#000000",
+    },
+  },
+})
+
+const calendarTheme = createTheme({
+  overrides: {
+    MuiPickersToolbar: {
+      toolbar: {
+        backgroundColor: "black",
+      },
+    },
+    MuiPickersCalendarHeader: {
+      switchHeader: {
+        // backgroundColor: lightBlue.A200,
+        // color: "white",
+      },
+    },
+    MuiPickersDay: {
+      day: {
+        color: "black",
+      },
+      daySelected: {
+        backgroundColor: "black",
+      },
+      dayDisabled: {
+        color: "black",
+      },
+      current: {
+        color: "black",
+      },
+    },
+    MuiPickersModal: {
+      dialogAction: {
+        color: "black",
+      },
+    },
+  },
+})
 
 function TourForm({ selected }) {
   const navigate = useNavigate()
@@ -45,11 +89,12 @@ function TourForm({ selected }) {
     setTourId("")
     setQuantity(0)
     setIsSubmitted(true)
+    window.open("https://buy.stripe.com/test_14k9BGdue5Wgfpm144")
   }
 
   const tourList = selected.tours
   const tourOptions = tourList?.map((t) => (
-    <MenuItem key={t.id} value={t.id}>
+    <MenuItem style={{ color: "black" }} key={t.id} value={t.id}>
       {t.name}
     </MenuItem>
   ))
@@ -83,86 +128,109 @@ function TourForm({ selected }) {
 
   return (
     <div>
-      {isSubmitted ? (
-        <Alert onClose={handleAlert}>
-          Tour Booked!
-          <Link to="/profile">View Profile</Link>
-        </Alert>
-      ) : null}
+      <ThemeProvider theme={THEME}>
+        {isSubmitted ? (
+          <Alert severity="info" onClose={handleAlert}>
+            Tour Reserved, payment pending Stripe Authorization |
+            <Link style={{ textDecoration: "none" }} to="/profile">
+              View Profile
+            </Link>
+          </Alert>
+        ) : null}
 
-      <form onSubmit={handleBookTour}>
-        <Grid
-          container
-          style={{
-            padding: "20px",
-            alignItems: "center",
-            backGround: "#081317;",
-          }}
-        >
-          <Grid item xs={3}>
-            <FormControl style={{ minWidth: 120 }} required>
-              <InputLabel>Tour</InputLabel>
-              <Select
-                size="large"
-                value={tour_id}
-                label="Tour"
-                onChange={handleTourSelect}
-              >
-                {tourOptions && tourOptions}
-              </Select>
-            </FormControl>
+        <form onSubmit={handleBookTour}>
+          <Grid
+            container
+            style={{
+              padding: "20px",
+              alignItems: "center",
+              backGround: "#081317",
+            }}
+          >
+            <Grid item xs={3}>
+              <FormControl style={{ minWidth: 120 }} required>
+                <InputLabel style={{ color: "white" }}>Tour</InputLabel>
+                <Select
+                  style={{ color: "black" }}
+                  size="large"
+                  value={tour_id}
+                  label="Tour"
+                  onChange={handleTourSelect}
+                >
+                  {tourOptions && tourOptions}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid item xs={3}>
+              <FormControl style={{ minWidth: 120 }} required>
+                <InputLabel style={{ color: "white" }}>Quantity</InputLabel>
+                <Select
+                  size="large"
+                  value={quantity}
+                  label="Quantity"
+                  onChange={handleQuantityChange}
+                >
+                  <MenuItem style={{ color: "black" }} value={0}>
+                    0
+                  </MenuItem>
+                  <MenuItem style={{ color: "black" }} value={1}>
+                    1
+                  </MenuItem>
+                  <MenuItem style={{ color: "black" }} value={2}>
+                    2
+                  </MenuItem>
+                  <MenuItem style={{ color: "black" }} value={3}>
+                    3
+                  </MenuItem>
+                  <MenuItem style={{ color: "black" }} value={4}>
+                    4
+                  </MenuItem>
+                  <MenuItem style={{ color: "black" }} value={5}>
+                    5
+                  </MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+            {/* <br /> */}
+            <Grid item xs={3}>
+              <ThemeProvider theme={calendarTheme}>
+                <DateTimePicker
+                  shouldDisableDate={filterWeekends}
+                  minTime={new Date(0, 0, 0, 9)}
+                  maxTime={new Date(0, 0, 0, 15)}
+                  maxDate={new Date("2022-12-31")}
+                  minDate={new Date()}
+                  renderInput={(props) => <TextField {...props} />}
+                  value={dateValue}
+                  onChange={(newDateValue) => {
+                    datePick(newDateValue)
+                  }}
+                />
+              </ThemeProvider>
+            </Grid>
+            <Grid
+              style={{ paddingLeft: "40px", justify: "center" }}
+              item
+              xs={3}
+            >
+              {ticket_price ? <p>Total: ${ticket_price}</p> : null}
+              {currentUser ? (
+                <Button size="large" variant="text" type="submit">
+                  Book
+                </Button>
+              ) : (
+                <Button
+                  size="large"
+                  variant="outlined"
+                  onClick={() => navigate("/login")}
+                >
+                  Login to Book
+                </Button>
+              )}
+            </Grid>
           </Grid>
-          <Grid item xs={3}>
-            <FormControl style={{ minWidth: 120 }} required>
-              <InputLabel>Quantity</InputLabel>
-              <Select
-                size="large"
-                value={quantity}
-                label="Quantity"
-                onChange={handleQuantityChange}
-              >
-                <MenuItem value={0}>0</MenuItem>
-                <MenuItem value={1}>1</MenuItem>
-                <MenuItem value={2}>2</MenuItem>
-                <MenuItem value={3}>3</MenuItem>
-                <MenuItem value={4}>4</MenuItem>
-                <MenuItem value={5}>5</MenuItem>
-              </Select>
-            </FormControl>
-          </Grid>
-          {/* <br /> */}
-          <Grid item xs={3}>
-            <DateTimePicker
-              shouldDisableDate={filterWeekends}
-              minTime={new Date(0, 0, 0, 9)}
-              maxTime={new Date(0, 0, 0, 15)}
-              maxDate={new Date("2022-12-31")}
-              minDate={new Date()}
-              renderInput={(props) => <TextField {...props} />}
-              value={dateValue}
-              onChange={(newDateValue) => {
-                datePick(newDateValue)
-              }}
-            />
-          </Grid>
-          <Grid style={{ paddingLeft: "40px", justify: "center" }} item xs={3}>
-            {ticket_price ? <p>Total: ${ticket_price}</p> : null}
-            {currentUser ? (
-              <Button size="large" variant="text" type="submit">
-                Book
-              </Button>
-            ) : (
-              <Button
-                size="large"
-                variant="outlined"
-                onClick={() => navigate("/login")}
-              >
-                Login to Book
-              </Button>
-            )}
-          </Grid>
-        </Grid>
-      </form>
+        </form>
+      </ThemeProvider>
     </div>
   )
 }

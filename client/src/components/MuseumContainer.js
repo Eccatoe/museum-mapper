@@ -14,46 +14,61 @@ import ShareIcon from "@mui/icons-material/Share"
 import TourIcon from "@mui/icons-material/Tour"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
+import PinDropIcon from "@mui/icons-material/PinDrop"
+import { createTheme, ThemeProvider } from "@mui/material/styles"
+
+const THEME = createTheme({
+  palette: {
+    text: {
+      primary: "#000",
+    },
+  },
+})
 
 function MuseumContainer({ museums }) {
   const heights = ["150", "300", "500"]
   const widths = ["200", "400", "600"]
   let navigate = useNavigate()
   const createMuseumCard = museums.map((item, index) => (
-    <Card key={index} sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height={heights[Math.floor(Math.random() * heights.length)]}
-        image={item.image}
-        alt={item.name}
-      />
-      <Typography variant="h5">{item.name}</Typography>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share" onClick={() => window.open(item.link)}>
-          <ShareIcon />
-        </IconButton>
-        <IconButton aria-label="add to favorites">
-          <TourIcon
-            size="large"
-            onClick={() => navigate(`/museums/${item.id}`)}
-          />
-        </IconButton>
-        <Link
-          style={{ fontSize: "15px", textDecoration: "none" }}
-          to={{ pathname: `/museums/${item.id}` }}
-        >
-          Book a Tour
-        </Link>
+    <ThemeProvider theme={THEME}>
+      <Card key={index} sx={{ maxWidth: 345 }}>
+        <CardMedia
+          component="img"
+          height={heights[Math.floor(Math.random() * heights.length)]}
+          image={item.image}
+          alt={item.name}
+        />
+        <Typography color="textPrimary" variant="h5">
+          {item.name}
+        </Typography>
+        <CardActions disableSpacing>
+          <IconButton aria-label="add to favorites">
+            {/* <FavoriteIcon /> */}
+            <PinDropIcon size="large" />
+          </IconButton>
+          <IconButton aria-label="share" onClick={() => window.open(item.link)}>
+            <ShareIcon />
+          </IconButton>
+          <IconButton aria-label="add to favorites">
+            <TourIcon
+              size="large"
+              onClick={() => navigate(`/museums/${item.id}`)}
+            />
+          </IconButton>
+          <Link
+            style={{ fontSize: "15px", textDecoration: "none" }}
+            to={{ pathname: `/museums/${item.id}` }}
+          >
+            Book a Tour
+          </Link>
 
-        {/* <Button startIcon={<TourIcon style={{ color: grey[500] }} />}>
+          {/* <Button startIcon={<TourIcon style={{ color: grey[500] }} />}>
           {" "} */}
 
-        {/* </Button> */}
-      </CardActions>
-    </Card>
+          {/* </Button> */}
+        </CardActions>
+      </Card>
+    </ThemeProvider>
   ))
 
   return (
