@@ -9,15 +9,15 @@ import AppAdapter from "../adapters/AppAdapter";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [validUser, setValidUser]=useState(true)
   const { currentUser } = useContext(UserContext);
   const { setCurrentUser } = useContext(UserContext);
   let navigate = useNavigate();
 
   const alertMessage = (
-    <Alert severity="error">
-      <AlertTitle>Error</AlertTitle>
-      This is an error alert — <strong>check it out!</strong>
-    </Alert>
+    <Alert variant="outlined" severity="error">
+      <AlertTitle>Whoops!</AlertTitle>
+Incorrect Username or Password    </Alert>
   );
   function handleLogin(e) {
     e.preventDefault();
@@ -34,13 +34,14 @@ function Login() {
       if (response.ok) {
         response.json().then((currentUser) => setCurrentUser(currentUser));
         navigate("/home");
-      } else alert("No way Jose");
-    });
+      } else setValidUser(false)
+    }) 
   }
 
   return (
     <div id="login">
       <div style={{ color: "#697680" }} className="loginSignupDiv">
+        {validUser? null : alertMessage}
         <div className="loginSignupForm">
           <h1>Login</h1>
           <form className="form" onSubmit={handleLogin}>

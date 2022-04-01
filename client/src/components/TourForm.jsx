@@ -83,7 +83,7 @@ function TourForm({ selected }) {
   return (
     <>
       {isSubmitted ? (
-        <Alert onClose={handleAlert}>
+        <Alert variant="outlined" onClose={handleAlert}>
           Tour Booked!
           <Link to="/profile">View Profile</Link>
         </Alert>
