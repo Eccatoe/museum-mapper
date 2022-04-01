@@ -154,3 +154,7 @@ input:focus {
   padding-left: 10px;
   padding-bottom: 10px;
 }
+
+.bookTourPage {
+  background-color: #081317;
+}

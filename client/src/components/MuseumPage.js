@@ -59,7 +59,6 @@ function MuseumPage() {
               {selected.name}
             </Typography>
             <Typography variant="caption">-{selected.address}-</Typography>
-            <Typography variant="h6">{selected.about}</Typography>
           </Box>
           <TourForm selected={selected} />
           <TabContext value={value}>

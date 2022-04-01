@@ -82,7 +82,7 @@ function TourForm({ selected }) {
   }
 
   return (
-    <>
+    <div>
       {isSubmitted ? (
         <Alert onClose={handleAlert}>
           Tour Booked!
@@ -91,7 +91,14 @@ function TourForm({ selected }) {
       ) : null}
 
       <form onSubmit={handleBookTour}>
-        <Grid container style={{ padding: "20px", alignItems: "center" }}>
+        <Grid
+          container
+          style={{
+            padding: "20px",
+            alignItems: "center",
+            backGround: "#081317;",
+          }}
+        >
           <Grid item xs={3}>
             <FormControl style={{ minWidth: 120 }} required>
               <InputLabel>Tour</InputLabel>
@@ -156,7 +163,7 @@ function TourForm({ selected }) {
           </Grid>
         </Grid>
       </form>
-    </>
+    </div>
   )
 }
 
