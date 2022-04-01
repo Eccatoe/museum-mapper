@@ -127,6 +127,7 @@ function TourForm({ selected }) {
   }
 
   return (
+<<<<<<< HEAD
     <div>
       <ThemeProvider theme={THEME}>
         {isSubmitted ? (
@@ -146,6 +147,35 @@ function TourForm({ selected }) {
               alignItems: "center",
               backGround: "#081317",
             }}
+=======
+    <>
+      {isSubmitted ? (
+        <Alert variant="outlined" onClose={handleAlert}>
+          Tour Booked!
+          <Link to="/profile">View Profile</Link>
+        </Alert>
+      ) : null}
+      <form onSubmit={handleBookTour}>
+        <FormControl required>
+          <InputLabel>Tour</InputLabel>
+          <Select
+            size="large"
+            value={tour_id}
+            label="Tour"
+            onChange={handleTourSelect}
+          >
+            {tourOptions && tourOptions}
+          </Select>
+          <FormHelperText>Required</FormHelperText>
+        </FormControl>
+        <FormControl required>
+          <InputLabel>Quantity</InputLabel>
+          <Select
+            size="large"
+            value={quantity}
+            label="Quantity"
+            onChange={handleQuantityChange}
+>>>>>>> lizdev
           >
             <Grid item xs={3}>
               <FormControl style={{ minWidth: 120 }} required>
