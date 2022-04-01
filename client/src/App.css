@@ -1,14 +1,12 @@
 body {
   background-color: #081317;
-  overflow: scroll;
+  overflow: hidden;
   color: white;
   font-family: "Raleway", sans-serif;
 }
-
 img {
   max-width: 30vw;
 }
-
 .mapboxgl-canvas-container {
   width: 20vw;
   height: 100%;
@@ -24,14 +22,12 @@ img {
   padding-left: 30px; /* gutter size */
   background-clip: padding-box;
 }
-
 /* Style your items */
 .my-masonry-grid_column > div {
   /* change div to reference your elements you put in <Masonry> */
   background: grey;
   margin-bottom: 30px;
 }
-
 #login {
   background: url("https://images.unsplash.com/photo-1581097543550-b3cbe2e6ea6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
     no-repeat;
@@ -55,7 +51,6 @@ img {
   min-width: 100%;
   min-height: 100%;
 }
-
 h1 {
   font-size: 40px;
   margin-top: 0;
@@ -68,7 +63,6 @@ h1 {
   font-weight: 600;
   /* text-shadow: 0px 0px 3px white; */
 }
-
 .loginSignupForm {
   margin-top: 90px;
   display: flex;
@@ -106,14 +100,12 @@ input:focus {
   background: #b2b0ab;
   margin-top: 10px;
 }
-
 #splash {
   background-size: cover;
   height: 100vh;
   width: 100vw;
   text-align: center;
 }
-
 .explore {
   text-decoration: none;
   position: relative;
@@ -122,7 +114,6 @@ input:focus {
   color: #90b0ca;
   text-shadow: 0 0 2px black;
 }
-
 #portal {
   background: url("./assets/metro.jpg");
   /* background: url('https://cdn.vectorstock.com/i/1000x1000/81/07/washington-dc-skyline-vector-37198107.webp') no-repeat; */
@@ -133,21 +124,25 @@ input:focus {
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  /* color: #ddeef5 */
+  /* color: #DDEEF5 */
 }
 #portal h1 {
   margin: 40px;
+  position: fixed;
 }
-
+.scroll {
+  /* position: fixed; */
+  overflow: scroll;
+  margin-top: 100px;
+}
 .tourContainer {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   height: 100vh;
-  overflow: scroll;
+  /* overflow:scroll; */
   flex-direction: column;
   margin-left: 30px;
 }
-
 .tourCard {
   width: 40vw;
   color: #ddeef5;
@@ -158,8 +153,4 @@ input:focus {
   margin: 10px;
   padding-left: 10px;
   padding-bottom: 10px;
-}
-
-.bookTourPage {
-  background-color: #081317;
 }
