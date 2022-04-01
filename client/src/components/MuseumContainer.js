@@ -32,7 +32,7 @@ function MuseumContainer({ museums }) {
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share" href={item.link}>
+        <IconButton aria-label="share" onClick={() => window.open(item.link)}>
           <ShareIcon />
         </IconButton>
         <IconButton aria-label="add to favorites">
