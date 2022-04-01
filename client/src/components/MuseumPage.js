@@ -116,34 +116,34 @@ function MuseumPage() {
                     <Tab value="3" label="Private Tour" />
                   </Tabs>
                   <TabPanel value="1" index={0}>
-                    <Typography align="center"> Price: $40/person</Typography>
-                    <Typography align="center">
+                    <Typography > Price: $40/person</Typography>
+                    <Typography >
                       Standard group size: 20 people{" "}
                     </Typography>
-                    <Typography align="center">Time: 2 hours</Typography>
-                    <Typography align="center">
+                    <Typography >Time: 2 hours</Typography>
+                    <Typography >
                       Learn from experienced professionals who are passionate
                       about history and culture.
                     </Typography>
                   </TabPanel>
                   <TabPanel value="2" index={1}>
-                    <Typography align="center">Price: $60/person </Typography>
-                    <Typography align="center">
+                    <Typography >Price: $60/person </Typography>
+                    <Typography >
                       Standard group size: 10 people
                     </Typography>
-                    <Typography align="center">Time: 4 hours</Typography>
-                    <Typography align="center">
+                    <Typography >Time: 4 hours</Typography>
+                    <Typography >
                       A hands on tour with a small group and extra attention to
                       details. Make a day of it!
                     </Typography>
                   </TabPanel>
                   <TabPanel value="3" index={2}>
-                    <Typography align="center">Price: $100/person</Typography>
-                    <Typography align="center">
+                    <Typography >Price: $100/person</Typography>
+                    <Typography >
                       Just you and your guests
                     </Typography>
-                    <Typography align="center">Time: 3 hours </Typography>
-                    <Typography align="center">
+                    <Typography >Time: 3 hours </Typography>
+                    <Typography >
                       Skip the line and take advantage of small groups and
                       professional guides who will adapt the tour to your
                       interests and answer all of your questions.

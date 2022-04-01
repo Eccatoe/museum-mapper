@@ -7,7 +7,7 @@ function SplishSplash() {
         <video autoPlay muted loop id="myVideo">
   <source src={waMonument} type="video/mp4"/>
 </video>
-<Link className="explore" to="/home">Explore DC</Link>
+<Link className="explore" to="/home">EXPLORE DC</Link>
     </div>
   )
 }

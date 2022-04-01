@@ -1,5 +1,5 @@
 class MuseumsController < ApplicationController
-    # skip_before_action :authorize, only: :index
+    # skip_before_action :authorize
 
     def index
         render json: Museum.all, status: :ok

@@ -1,21 +1,22 @@
-import { Link, useNavigate } from "react-router-dom"
-import Map from "./Map"
-import Container from "@mui/material/Container"
-import Masonry from "@mui/lab/Masonry"
-import "../App.css"
-import Card from "@mui/material/Card"
-import CardMedia from "@mui/material/CardMedia"
-import CardActions from "@mui/material/CardActions"
-import IconButton from "@mui/material/IconButton"
-import Button from "@mui/material/Button"
-import Typography from "@mui/material/Typography"
-import FavoriteIcon from "@mui/icons-material/Favorite"
-import ShareIcon from "@mui/icons-material/Share"
-import TourIcon from "@mui/icons-material/Tour"
-import Box from "@mui/material/Box"
-import Grid from "@mui/material/Grid"
-import PinDropIcon from "@mui/icons-material/PinDrop"
-import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { Link, useNavigate } from "react-router-dom";
+import Map from "./Map";
+import Container from "@mui/material/Container";
+import Masonry from "@mui/lab/Masonry";
+import "../App.css";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+import CardActions from "@mui/material/CardActions";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import TourIcon from "@mui/icons-material/Tour";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import PinDropIcon from "@mui/icons-material/PinDrop";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { grey } from "@mui/material/colors";
 
 const THEME = createTheme({
   palette: {
@@ -23,12 +24,12 @@ const THEME = createTheme({
       primary: "#000",
     },
   },
-})
+});
 
 function MuseumContainer({ museums }) {
-  const heights = ["150", "300", "500"]
-  const widths = ["200", "400", "600"]
-  let navigate = useNavigate()
+  const heights = ["150", "300", "500"];
+  const widths = ["200", "400", "600"];
+  let navigate = useNavigate();
   const createMuseumCard = museums.map((item, index) => (
     <ThemeProvider theme={THEME}>
       <Card key={index} sx={{ maxWidth: 345 }}>
@@ -37,7 +38,8 @@ function MuseumContainer({ museums }) {
           height={heights[Math.floor(Math.random() * heights.length)]}
           image={item.image}
           alt={item.name}
-        />
+        >
+        </CardMedia>
         <Typography color="textPrimary" variant="h5">
           {item.name}
         </Typography>
@@ -49,27 +51,18 @@ function MuseumContainer({ museums }) {
           <IconButton aria-label="share" onClick={() => window.open(item.link)}>
             <ShareIcon />
           </IconButton>
-          <IconButton aria-label="add to favorites">
-            <TourIcon
-              size="large"
-              onClick={() => navigate(`/museums/${item.id}`)}
-            />
-          </IconButton>
-          <Link
-            style={{ fontSize: "15px", textDecoration: "none" }}
-            to={{ pathname: `/museums/${item.id}` }}
+          <Button
+            style={{ flexDirection: "row", color: grey[500] }}
+            onClick={() => navigate(`/museums/${item.id}`)}
           >
-            Book a Tour
-          </Link>
-
-          {/* <Button startIcon={<TourIcon style={{ color: grey[500] }} />}>
-          {" "} */}
-
-          {/* </Button> */}
+            <TourIcon style={{ paddingRight: "3px" }} />
+            Book Tour
+          </Button>
+         
         </CardActions>
       </Card>
     </ThemeProvider>
-  ))
+  ));
 
   return (
     <>
@@ -95,7 +88,7 @@ function MuseumContainer({ museums }) {
         </Grid>
       </Box>
     </>
-  )
+  );
 }
 
-export default MuseumContainer
+export default MuseumContainer;
