@@ -64,66 +64,92 @@ function MuseumPage() {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                marginTop: 10,
               }}
             >
               <Typography variant="h3" align="center">
                 {selected.name}
               </Typography>
-              <Typography variant="caption">-{selected.address}-</Typography>
+              <Typography sx={{ marginBottom: "10px" }} variant="subtitle2">
+                -{selected.address}-
+              </Typography>
+              {/* <Typography variant="h5" align="center">
+                {selected.description}
+              </Typography> */}
+              <Typography align="center" variant="caption">
+                {selected.about}
+              </Typography>
             </Box>
             <TourForm selected={selected} />
-            <TabContext value={value}>
+            <TabContext align="center" value={value}>
               <Box
+                alignItems="center"
                 sx={{
-                  mx: 4,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
+                  borderTop: "dashed",
+                  padding: "10px",
+                  margin: "0px 20px",
                 }}
               >
-                <Typography align="center" variant="h6">
-                  Not sure which tour is right for you?
-                </Typography>
-                <Tabs
-                  value={value}
-                  onChange={handleTourSelect}
-                  textColor="secondary"
-                  indicatorColor="primary"
+                <Box
+                  sx={{
+                    mx: 4,
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
                 >
-                  <Tab value="1" label="Standard Tour" />
-                  <Tab value="2" label="Extended Tour" />
-                  <Tab value="3" label="Private Tour" />
-                </Tabs>
-                <TabPanel value="1" index={0}>
-                  <Typography align="center"> Price: $40/person</Typography>
-                  <Typography align="center">
-                    Standard group size: 20 people{" "}
+                  <Typography
+                    sx={{ fontStyle: "italic", paddingTop: "10px" }}
+                    align="center"
+                    variant="h6"
+                  >
+                    Not sure which tour is right for you?
                   </Typography>
-                  <Typography align="center">Time: 2 hours</Typography>
-                  <Typography align="center">
-                    Learn from experienced professionals who are passionate
-                    about history and culture.
-                  </Typography>
-                </TabPanel>
-                <TabPanel value="2" index={1}>
-                  <Typography>Price: $60/person </Typography>
-                  <Typography>Standard group size: 10 people</Typography>
-                  <Typography>Time: 4 hours</Typography>
-                  <Typography>
-                    A hands on tour with a small group and extra attention to
-                    details. Make a day of it!
-                  </Typography>
-                </TabPanel>
-                <TabPanel value="3" index={2}>
-                  <Typography>Price: $100/person</Typography>
-                  <Typography>Just you and your guests</Typography>
-                  <Typography>Time: 3 hours </Typography>
-                  <Typography>
-                    Skip the line and take advantage of small groups and
-                    professional guides who will adapt the tour to your
-                    interests and answer all of your questions.
-                  </Typography>
-                </TabPanel>
+                  <Tabs
+                    value={value}
+                    onChange={handleTourSelect}
+                    textColor="white"
+                    indicatorColor="primary"
+                  >
+                    <Tab value="1" label="Standard Tour" />
+                    <Tab value="2" label="Extended Tour" />
+                    <Tab value="3" label="Private Tour" />
+                  </Tabs>
+                  <TabPanel value="1" index={0}>
+                    <Typography align="center"> Price: $40/person</Typography>
+                    <Typography align="center">
+                      Standard group size: 20 people{" "}
+                    </Typography>
+                    <Typography align="center">Time: 2 hours</Typography>
+                    <Typography align="center">
+                      Learn from experienced professionals who are passionate
+                      about history and culture.
+                    </Typography>
+                  </TabPanel>
+                  <TabPanel value="2" index={1}>
+                    <Typography align="center">Price: $60/person </Typography>
+                    <Typography align="center">
+                      Standard group size: 10 people
+                    </Typography>
+                    <Typography align="center">Time: 4 hours</Typography>
+                    <Typography align="center">
+                      A hands on tour with a small group and extra attention to
+                      details. Make a day of it!
+                    </Typography>
+                  </TabPanel>
+                  <TabPanel value="3" index={2}>
+                    <Typography align="center">Price: $100/person</Typography>
+                    <Typography align="center">
+                      Just you and your guests
+                    </Typography>
+                    <Typography align="center">Time: 3 hours </Typography>
+                    <Typography align="center">
+                      Skip the line and take advantage of small groups and
+                      professional guides who will adapt the tour to your
+                      interests and answer all of your questions.
+                    </Typography>
+                  </TabPanel>
+                </Box>
               </Box>
             </TabContext>
           </Grid>

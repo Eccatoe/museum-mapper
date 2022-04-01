@@ -20,11 +20,15 @@ const THEME = createTheme({
       primary: "#FFFFFF",
       secondary: "#000000",
     },
+    mode: "dark",
   },
 })
 
 const calendarTheme = createTheme({
   overrides: {
+    Input: {
+      color: "white",
+    },
     MuiPickersToolbar: {
       toolbar: {
         backgroundColor: "black",
@@ -41,10 +45,10 @@ const calendarTheme = createTheme({
         color: "black",
       },
       daySelected: {
-        backgroundColor: "black",
+        backgroundColor: "blue",
       },
       dayDisabled: {
-        color: "black",
+        color: "red",
       },
       current: {
         color: "black",
@@ -63,7 +67,6 @@ function TourForm({ selected }) {
   const { currentUser } = useContext(UserContext)
   const [dateValue, setDateValue] = useState("")
   const [time, setTime] = useState("")
-  const [ticket_price, setTicketPrice] = useState(0)
   const [tour_id, setTourId] = useState("")
   const [quantity, setQuantity] = useState(0)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -78,14 +81,13 @@ function TourForm({ selected }) {
       },
       body: JSON.stringify({
         time,
-        ticket_price,
+        ticket_price: ticketPrice(),
         quantity,
         tour_id,
         user_id,
       }),
     }).then((r) => r.json())
     setDateValue(null)
-    setTicketPrice(0)
     setTourId("")
     setQuantity(0)
     setIsSubmitted(true)
@@ -94,7 +96,7 @@ function TourForm({ selected }) {
 
   const tourList = selected.tours
   const tourOptions = tourList?.map((t) => (
-    <MenuItem style={{ color: "black" }} key={t.id} value={t.id}>
+    <MenuItem key={t.id} value={t.id}>
       {t.name}
     </MenuItem>
   ))
@@ -115,11 +117,11 @@ function TourForm({ selected }) {
 
   function handleQuantityChange(e) {
     setQuantity(e.target.value)
-    selected.tours.filter((tour) => {
-      if (tour.id === tour_id) {
-        setTicketPrice(tour.price * quantity)
-      }
-    })
+  }
+
+  function ticketPrice() {
+    const tour = selected.tours.find((tour) => tour.id === tour_id)
+    return tour.price * quantity
   }
 
   function handleAlert() {
@@ -130,9 +132,14 @@ function TourForm({ selected }) {
     <div>
       <ThemeProvider theme={THEME}>
         {isSubmitted ? (
-          <Alert severity="info" onClose={handleAlert}>
+          <Alert severity="success" variant="outlined" onClose={handleAlert}>
             Tour Reserved, payment pending Stripe Authorization |
-            <Link style={{ textDecoration: "none" }} to="/profile">
+            <Link
+              style={{
+                textDecoration: "none",
+              }}
+              to="/profile"
+            >
               View Profile
             </Link>
           </Alert>
@@ -151,7 +158,10 @@ function TourForm({ selected }) {
               <FormControl style={{ minWidth: 120 }} required>
                 <InputLabel style={{ color: "white" }}>Tour</InputLabel>
                 <Select
-                  style={{ color: "black" }}
+                  sx={{
+                    color: "white",
+                  }}
+                  style={{ color: "white" }}
                   size="large"
                   value={tour_id}
                   label="Tour"
@@ -165,36 +175,32 @@ function TourForm({ selected }) {
               <FormControl style={{ minWidth: 120 }} required>
                 <InputLabel style={{ color: "white" }}>Quantity</InputLabel>
                 <Select
+                  sx={{
+                    color: "white",
+                  }}
                   size="large"
                   value={quantity}
                   label="Quantity"
                   onChange={handleQuantityChange}
                 >
-                  <MenuItem style={{ color: "black" }} value={0}>
-                    0
-                  </MenuItem>
-                  <MenuItem style={{ color: "black" }} value={1}>
-                    1
-                  </MenuItem>
-                  <MenuItem style={{ color: "black" }} value={2}>
-                    2
-                  </MenuItem>
-                  <MenuItem style={{ color: "black" }} value={3}>
-                    3
-                  </MenuItem>
-                  <MenuItem style={{ color: "black" }} value={4}>
-                    4
-                  </MenuItem>
-                  <MenuItem style={{ color: "black" }} value={5}>
-                    5
-                  </MenuItem>
+                  <MenuItem value={0}>0</MenuItem>
+                  <MenuItem value={1}>1</MenuItem>
+                  <MenuItem value={2}>2</MenuItem>
+                  <MenuItem value={3}>3</MenuItem>
+                  <MenuItem value={4}>4</MenuItem>
+                  <MenuItem value={5}>5</MenuItem>
                 </Select>
               </FormControl>
             </Grid>
-            {/* <br /> */}
+
             <Grid item xs={3}>
-              <ThemeProvider theme={calendarTheme}>
+              <ThemeProvider theme={THEME}>
                 <DateTimePicker
+                  sx={{
+                    button: {
+                      color: "white",
+                    },
+                  }}
                   shouldDisableDate={filterWeekends}
                   minTime={new Date(0, 0, 0, 9)}
                   maxTime={new Date(0, 0, 0, 15)}
@@ -213,9 +219,14 @@ function TourForm({ selected }) {
               item
               xs={3}
             >
-              {ticket_price ? <p>Total: ${ticket_price}</p> : null}
+              {quantity ? <p>Total: ${ticketPrice()}</p> : null}
               {currentUser ? (
-                <Button size="large" variant="text" type="submit">
+                <Button
+                  sx={{ color: "white", padding: "10px" }}
+                  size="large"
+                  variant="text"
+                  type="submit"
+                >
                   Book
                 </Button>
               ) : (

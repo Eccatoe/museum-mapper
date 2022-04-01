@@ -1,0 +1,189 @@
+[
+  {
+    "id": 1,
+    "geometry": {
+      "coordinates": [-77.0229615932543, 38.88822357963494],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "Hirshhorn Museum and Sculpture Garden"
+    }
+  },
+  {
+    "id": 2,
+    "geometry": {
+      "coordinates": [-76.97682976256489, 38.856575890110435],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "Anacostia Community Museum"
+    }
+  },
+  {
+    "id": 3,
+    "geometry": {
+      "coordinates": [-77.01975788954995, 38.88812765492665],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Air and Space Museum"
+    }
+  },
+  {
+    "id": 4,
+    "geometry": {
+      "coordinates": [-77.03270727976185, 38.891103421909094],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Museum of African American History and Culture"
+    }
+  },
+  {
+    "id": 5,
+    "geometry": {
+      "coordinates": [-77.02549143187714, 38.88798852658266],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Museum of African Art"
+    }
+  },
+  {
+    "id": 6,
+    "geometry": {
+      "coordinates": [-77.03001390674564, 38.89125057803281],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Museum of American History"
+    }
+  },
+  {
+    "id": 7,
+    "geometry": {
+      "coordinates": [-77.0264339067458, 38.88797252658691],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Museum of Asian Art"
+    }
+  },
+  {
+    "id": 8,
+    "geometry": {
+      "coordinates": [-77.01674721230407, 38.88822467551401],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Museum of the American Indian"
+    }
+  },
+  {
+    "id": 9,
+    "geometry": {
+      "coordinates": [-77.02602146627063, 38.89126452600581],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Museum of Natural History"
+    }
+  },
+  {
+    "id": 10,
+    "geometry": {
+      "coordinates": [-77.02297536441844, 38.897859673949995],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Portrait Gallery"
+    }
+  },
+  {
+    "id": 11,
+    "geometry": {
+      "coordinates": [-77.00820430489323, 38.89823841920369],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Postal Museum"
+    }
+  },
+  {
+    "id": 12,
+    "geometry": {
+      "coordinates": [-77.03909805886173, 38.89913576858115],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "Renwick Gallery"
+    }
+  },
+  {
+    "id": 13,
+    "geometry": {
+      "coordinates": [-77.02298970304095, 38.89820036872797],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "Smithsonian American Art Museum"
+    }
+  },
+  {
+    "id": 14,
+    "geometry": {
+      "coordinates": [-77.02599163558186, 38.88879582452],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "Smithsonian Institution Building"
+    }
+  },
+  {
+    "id": 15,
+    "geometry": {
+      "coordinates": [-77.04966844641824, 38.92913405575851],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Zoological Park (National Zoo)"
+    }
+  },
+  {
+    "id": 16,
+    "geometry": {
+      "coordinates": [-77.0229286183864, 38.89284098921843],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "National Archives"
+    }
+  },
+  {
+    "id": 17,
+    "geometry": {
+      "coordinates": [-77.03272303372984, 38.88665184202878],
+      "type": "Point"
+    },
+    "type": "Feature",
+    "properties": {
+      "name": "United States Holocaust Memorial Museum"
+    }
+  }
+]
