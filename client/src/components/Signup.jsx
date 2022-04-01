@@ -80,7 +80,7 @@ function Signup() {
 
             <input type="submit" value="Signup" />
             <div>Have an account?</div>
-            <button onClick={navigate('/login')}>Login</button>
+            {/* <button onClick={navigate('/login')}>Login</button> */}
           </form>
         </div>
       </div>

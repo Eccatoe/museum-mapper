@@ -16,3 +16,5 @@ Cleanup:
 -alert
 -fix signup button on login
 -change space piccy
+-put all the things in adapters
+-maybe book after tourform redirect to login

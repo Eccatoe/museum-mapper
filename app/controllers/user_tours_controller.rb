@@ -13,6 +13,6 @@ class UserToursController < ApplicationController
     private
 
     def user_tour_params
-        params.permit(:time, :tour_id, :user_id)
+        params.permit(:time, :tour_id, :user_id, :quantity, :ticket_price)
     end
 end

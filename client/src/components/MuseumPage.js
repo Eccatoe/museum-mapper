@@ -1,5 +1,5 @@
 import Swipe from "./Swipe";
-import TourForm from './TourForm';
+import TourForm from "./TourForm";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
@@ -25,7 +25,6 @@ function MuseumPage() {
   function handleTourSelect(e, newValue) {
     setValue(newValue);
   }
-
 
   return (
     <>
@@ -71,19 +70,32 @@ function MuseumPage() {
                 <Tab value="3" label="Private Tour" />
               </Tabs>
               <TabPanel value="1" index={0}>
-                Standard group size: 20 people Time: 2 hours Learn from
-                experienced professionals who are passionate about history and
-                culture.
+                <Typography> Price: $40/person</Typography>
+                <Typography>Standard group size: 20 people </Typography>
+                <Typography>Time: 2 hours</Typography>
+                <Typography>
+                  Learn from experienced professionals who are passionate about
+                  history and culture.
+                </Typography>
               </TabPanel>
               <TabPanel value="2" index={1}>
-                Standard group size: 10 people Time: 4 hours A hands on tour
-                with a small group and extra attention to details. Make a day of
-                it!
+                <Typography>Price: $60/person </Typography>
+                <Typography>Standard group size: 10 people</Typography>
+                <Typography>Time: 4 hours</Typography>
+                <Typography>
+                  A hands on tour with a small group and extra attention to
+                  details. Make a day of it!
+                </Typography>
               </TabPanel>
               <TabPanel value="3" index={2}>
-                Just you and your guests Time: 3 hours Skip the line and take
-                advantage of small groups and professional guides who will adapt
-                the tour to your interests and answer all of your questions.
+                <Typography>Price: $100/person</Typography>
+                <Typography>Just you and your guests</Typography>
+                <Typography>Time: 3 hours </Typography>
+                <Typography>
+                  Skip the line and take advantage of small groups and
+                  professional guides who will adapt the tour to your interests
+                  and answer all of your questions.
+                </Typography>
               </TabPanel>
             </Box>
           </TabContext>
@@ -96,17 +108,16 @@ function MuseumPage() {
               alignItems: "center",
             }}
           >
-            <Typography variant="h2" align="center">
+            <Typography variant="h3" align="center">
               {selected.name}
             </Typography>
             <Typography variant="caption">-{selected.address}-</Typography>
             <Typography variant="h6">{selected.about}</Typography>
           </Box>
-              <TourForm selected={selected}/>
-
+          <TourForm selected={selected} />
         </Grid>
       </Grid>
-      
+
       <Swipe />
     </>
   );

@@ -32,7 +32,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_150214) do
 
   create_table "user_tours", force: :cascade do |t|
     t.string "time"
-    t.integer "price"
+    t.integer "ticket_price"
+    t.integer "quantity"
     t.integer "tour_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false

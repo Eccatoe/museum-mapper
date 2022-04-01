@@ -22,7 +22,7 @@ const theme = createTheme({
   },
 })
 
-const pages = ["login", "signup", "booktour"]
+const pages = ["login", "signup"]
 const settings = ["Profile", "Logout"]
 
 function NavBar() {
