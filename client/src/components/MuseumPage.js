@@ -1,33 +1,33 @@
-import Swipe from "./Swipe";
-import TourForm from "./TourForm";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import Grid from "@mui/material/Grid";
-import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import TabPanel from "@mui/lab/TabPanel";
-import TabContext from "@mui/lab/TabContext";
+import Swipe from "./Swipe"
+import TourForm from "./TourForm"
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import Grid from "@mui/material/Grid"
+import CssBaseline from "@mui/material/CssBaseline"
+import Typography from "@mui/material/Typography"
+import Box from "@mui/material/Box"
+import Tabs from "@mui/material/Tabs"
+import Tab from "@mui/material/Tab"
+import TabPanel from "@mui/lab/TabPanel"
+import TabContext from "@mui/lab/TabContext"
 
 function MuseumPage() {
-  const [selected, setSelected] = useState({});
-  const [value, setValue] = useState("1");
+  const [selected, setSelected] = useState({})
+  const [value, setValue] = useState("1")
 
-  const { id } = useParams();
+  const { id } = useParams()
   useEffect(() => {
     fetch(`/museums/${id}`)
       .then((r) => r.json())
-      .then((selected) => setSelected(selected));
-  }, []);
+      .then((selected) => setSelected(selected))
+  }, [])
 
   function handleTourSelect(e, newValue) {
-    setValue(newValue);
+    setValue(newValue)
   }
 
   return (
-    <>
+    <div className="bookTourPage">
       <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
@@ -47,6 +47,21 @@ function MuseumPage() {
           }}
         />
         <Grid item xs={12} sm={8} md={5} elevation={6} square>
+          <Box
+            sx={{
+              mx: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="h3" align="center">
+              {selected.name}
+            </Typography>
+            <Typography variant="caption">-{selected.address}-</Typography>
+            <Typography variant="h6">{selected.about}</Typography>
+          </Box>
+          <TourForm selected={selected} />
           <TabContext value={value}>
             <Box
               sx={{
@@ -70,10 +85,12 @@ function MuseumPage() {
                 <Tab value="3" label="Private Tour" />
               </Tabs>
               <TabPanel value="1" index={0}>
-                <Typography> Price: $40/person</Typography>
-                <Typography>Standard group size: 20 people </Typography>
-                <Typography>Time: 2 hours</Typography>
-                <Typography>
+                <Typography align="center"> Price: $40/person</Typography>
+                <Typography align="center">
+                  Standard group size: 20 people{" "}
+                </Typography>
+                <Typography align="center">Time: 2 hours</Typography>
+                <Typography align="center">
                   Learn from experienced professionals who are passionate about
                   history and culture.
                 </Typography>
@@ -99,28 +116,12 @@ function MuseumPage() {
               </TabPanel>
             </Box>
           </TabContext>
-
-          <Box
-            sx={{
-              mx: 4,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Typography variant="h3" align="center">
-              {selected.name}
-            </Typography>
-            <Typography variant="caption">-{selected.address}-</Typography>
-            <Typography variant="h6">{selected.about}</Typography>
-          </Box>
-          <TourForm selected={selected} />
         </Grid>
       </Grid>
 
       <Swipe />
-    </>
-  );
+    </div>
+  )
 }
 
-export default MuseumPage;
+export default MuseumPage

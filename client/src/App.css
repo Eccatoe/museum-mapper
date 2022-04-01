@@ -2,7 +2,7 @@ body {
   background-color: #081317;
   overflow: scroll;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 img {
@@ -32,14 +32,16 @@ img {
   margin-bottom: 30px;
 }
 
-#login{
-  background: url('https://images.unsplash.com/photo-1581097543550-b3cbe2e6ea6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat;
+#login {
+  background: url("https://images.unsplash.com/photo-1581097543550-b3cbe2e6ea6e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80")
+    no-repeat;
   background-size: cover;
   height: 100vh;
   width: 100vw;
 }
-#signup{
-  background: url('https://www.hotelgeorge.com/images/1700-960/union-station-hero-249c3a1c.jpg') no-repeat;
+#signup {
+  background: url("https://www.hotelgeorge.com/images/1700-960/union-station-hero-249c3a1c.jpg")
+    no-repeat;
   /* background: url('https://lp-cms-production.imgix.net/image_browser/Cherry%20Blossoms%20and%20monument.jpg') no-repeat; */
   background-size: cover;
   height: 100vh;
@@ -54,9 +56,9 @@ img {
   min-height: 100%;
 }
 
-h1{
+h1 {
   font-size: 40px;
-  margin-top:0;
+  margin-top: 0;
 }
 .loginSignupDiv {
   display: flex;
@@ -68,95 +70,96 @@ h1{
 }
 
 .loginSignupForm {
-  margin-top:90px;
+  margin-top: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   height: 60vh;
   width: 30vw;
   background: transparent;
   backdrop-filter: blur(5px);
-  border-radius:20px;
+  border-radius: 20px;
   box-shadow: 0px 0px 40px black;
 }
-.form{
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
- input {
-   margin: 10px;
-   margin-bottom: 20px;
-    padding: 3px;
-   border-radius: 5px;
-   border: 1px solid #161511;
-   background: #b2b0ab 
- }
- input:focus {
-  outline:none;
-}
- .loginSignupDiv button{
+input {
+  margin: 10px;
+  margin-bottom: 20px;
   padding: 3px;
   border-radius: 5px;
   border: 1px solid #161511;
-  background: #b2b0ab ;
+  background: #b2b0ab;
+}
+input:focus {
+  outline: none;
+}
+.loginSignupDiv button {
+  padding: 3px;
+  border-radius: 5px;
+  border: 1px solid #161511;
+  background: #b2b0ab;
   margin-top: 10px;
- }
-
- #splash{
-   background-size: cover;
-   height: 100vh;
-   width: 100vw;
-   text-align:center;
- }
-
-
-.explore{
-  text-decoration: none;
-  position:relative;
-  top: 10vh;
-  font-size:70px;
-  color: #90b0ca;
-  text-shadow: 0 0 2px black
 }
 
-#portal{
-background: url('./assets/metro.jpg');
+#splash {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.explore {
+  text-decoration: none;
+  position: relative;
+  top: 10vh;
+  font-size: 70px;
+  color: #90b0ca;
+  text-shadow: 0 0 2px black;
+}
+
+#portal {
+  background: url("./assets/metro.jpg");
   /* background: url('https://cdn.vectorstock.com/i/1000x1000/81/07/washington-dc-skyline-vector-37198107.webp') no-repeat; */
   background-size: cover;
-  background-attachment:fixed;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
   display: flex;
-  overflow:hidden;
+  overflow: hidden;
   flex-direction: column;
   /* color: #ddeef5 */
 }
-#portal h1{
+#portal h1 {
   margin: 40px;
-
 }
 
-.tourContainer{
+.tourContainer {
   margin-top: 40px;
-display: flex;
-height: 100vh;
-overflow:scroll;
-flex-direction: column;
-margin-left: 30px;
+  display: flex;
+  height: 100vh;
+  overflow: scroll;
+  flex-direction: column;
+  margin-left: 30px;
 }
 
-.tourCard{
+.tourCard {
   width: 40vw;
-  color: #ddeef5 ;
-  background:rgba(15, 63, 97, .4);
+  color: #ddeef5;
+  background: rgba(15, 63, 97, 0.4);
   box-shadow: 0px 0px 5px rgb(10, 44, 68);
   backdrop-filter: blur(7px);
-  border-radius:20px;
+  border-radius: 20px;
   margin: 10px;
-  padding-left:10px;
-  padding-bottom: 10px
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
+.bookTourPage {
+  background-color: #081317;
+}

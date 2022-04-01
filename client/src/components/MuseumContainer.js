@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Map from "./Map"
 import Container from "@mui/material/Container"
 import Masonry from "@mui/lab/Masonry"
@@ -11,18 +11,19 @@ import Button from "@mui/material/Button"
 import Typography from "@mui/material/Typography"
 import FavoriteIcon from "@mui/icons-material/Favorite"
 import ShareIcon from "@mui/icons-material/Share"
-import TourIcon from '@mui/icons-material/Tour'
+import TourIcon from "@mui/icons-material/Tour"
 import Box from "@mui/material/Box"
 import Grid from "@mui/material/Grid"
 
 function MuseumContainer({ museums }) {
-
-
+  const heights = ["150", "300", "500"]
+  const widths = ["200", "400", "600"]
+  let navigate = useNavigate()
   const createMuseumCard = museums.map((item, index) => (
-    <Card key={index} sx={{ maxWidth: 345 }} >
+    <Card key={index} sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        height="194"
+        height={heights[Math.floor(Math.random() * heights.length)]}
         image={item.image}
         alt={item.name}
       />
@@ -34,14 +35,30 @@ function MuseumContainer({ museums }) {
         <IconButton aria-label="share" href={item.link}>
           <ShareIcon />
         </IconButton>
-        <Button startIcon={<TourIcon/>}> <Link to={{pathname: `/museums/${item.id}`}}>Book a Tour</Link></Button>
+        <IconButton aria-label="add to favorites">
+          <TourIcon
+            size="large"
+            onClick={() => navigate(`/museums/${item.id}`)}
+          />
+        </IconButton>
+        <Link
+          style={{ fontSize: "15px", textDecoration: "none" }}
+          to={{ pathname: `/museums/${item.id}` }}
+        >
+          Book a Tour
+        </Link>
+
+        {/* <Button startIcon={<TourIcon style={{ color: grey[500] }} />}>
+          {" "} */}
+
+        {/* </Button> */}
       </CardActions>
     </Card>
   ))
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box style={{ padding: "10px" }} sx={{ flexGrow: 1 }}>
         <Grid container spacing={1}>
           <Grid item xs={8}>
             <Container

@@ -60,10 +60,7 @@ function NavBar() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <AppBar
-          style={{ backgroundColor: "#21364e", marginBottom: "20px" }}
-          position="static"
-        >
+        <AppBar style={{ backgroundColor: "#21364e" }} position="static">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <Typography
@@ -142,7 +139,6 @@ function NavBar() {
           </Container>
         </AppBar>
       </div>
- 
     </ThemeProvider>
   )
 }
