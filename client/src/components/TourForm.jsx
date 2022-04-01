@@ -127,27 +127,6 @@ function TourForm({ selected }) {
   }
 
   return (
-<<<<<<< HEAD
-    <div>
-      <ThemeProvider theme={THEME}>
-        {isSubmitted ? (
-          <Alert severity="info" onClose={handleAlert}>
-            Tour Reserved, payment pending Stripe Authorization |
-            <Link style={{ textDecoration: "none" }} to="/profile">
-              View Profile
-            </Link>
-          </Alert>
-        ) : null}
-
-        <form onSubmit={handleBookTour}>
-          <Grid
-            container
-            style={{
-              padding: "20px",
-              alignItems: "center",
-              backGround: "#081317",
-            }}
-=======
     <>
       {isSubmitted ? (
         <Alert variant="outlined" onClose={handleAlert}>
@@ -175,8 +154,7 @@ function TourForm({ selected }) {
             value={quantity}
             label="Quantity"
             onChange={handleQuantityChange}
->>>>>>> lizdev
-          >
+          > </Select>
             <Grid item xs={3}>
               <FormControl style={{ minWidth: 120 }} required>
                 <InputLabel style={{ color: "white" }}>Tour</InputLabel>
